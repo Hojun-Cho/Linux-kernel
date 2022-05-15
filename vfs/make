@@ -1,0 +1,3 @@
+vfs_proc: vfs_proc.c
+    gcc -o vfs_proc vfs_proc.c
+    
