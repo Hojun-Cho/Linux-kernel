@@ -1,0 +1,1942 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 1244/1244   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 1 = 2
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 33 (a, 1, 7, a, a, 10)
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 33 = 1
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 72 (a, 1, 0, a, a, 10)
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 72 = 1
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 3 (a, a, a, a, 0, 10)
+        trace.sh-1977  [003] ....  5908.588666: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        trace.sh-1977  [003] ....  5908.588666: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 3 = 0
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 1 (1, 55cb08f1dc60, e, a, a, d)
+        trace.sh-1977  [003] d...  5908.588666: sched_switch: prev_comm=trace.sh prev_pid=1977 prev_prio=120 prev_state=R+ ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5908.588666: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=trace.sh next_pid=1977 next_prio=120
+        trace.sh-1977  [003] .N..  5908.588666: sys_exit: NR 1 = 14
+        trace.sh-1977  [003] d...  5908.588666: sched_switch: prev_comm=trace.sh prev_pid=1977 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5908.588666: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=trace.sh next_pid=1977 next_prio=120
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 0 (ff, 55cb08f1c560, 422, 1, 55cb08f1b080, 0)
+        trace.sh-1977  [003] ....  5908.588666: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        trace.sh-1977  [003] ....  5908.588666: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 0 = 0
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 14 (0, 7fff18180fd0, 7fff18181050, 8, 7f99e61468b0, 7f99e678c740)
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 14 = 0
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 14 (2, 7fff18181050, 0, 8, 7f99e61468b0, 7f99e678c740)
+        trace.sh-1977  [003] ....  5908.588666: sys_exit: NR 14 = 0
+        trace.sh-1977  [003] ....  5908.588666: sys_enter: NR 231 (0, 3c, 0, 4, e7, ffffffffffffff80)
+        trace.sh-1977  [003] d...  5908.589666: sched_switch: prev_comm=trace.sh prev_pid=1977 prev_prio=120 prev_state=Z ==> next_comm=invoke.sh next_pid=1976 next_prio=120
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 61 = 1977
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 5635c92fd530)
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 13 = 0
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 14 (2, 7ffce0620100, 0, 8, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 61 (ffffffff, 7ffce061fb90, 1, 0, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 61 = -10
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 15 (ffffffff, 7ffce061fb90, ffffffffffffff80, 0, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR -1 = 0
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 0 (ff, 5635c92fc510, 32, 1, 5635c92fd4e0, 0)
+       invoke.sh-1976  [003] ....  5908.589666: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1976  [003] ....  5908.589666: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 0 = 26
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 14 (0, 7ffce061ffe0, 7ffce0620060, 8, ffff, 0)
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 8 (ff, fffffffffffffff2, 1, 8, ffff, 0)
+       invoke.sh-1976  [003] ....  5908.589666: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1976  [003] ....  5908.589666: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1976  [003] ....  5908.589666: sys_exit: NR 8 = 36
+       invoke.sh-1976  [003] ....  5908.589666: sys_enter: NR 56 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 0)
+          <idle>-0     [000] d...  5908.590336: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=980 next_prio=120
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 0 (b, 7ffee02144e0, 4000, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 0 = 15
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 39 (557f11c39ebd, 7, 1d, 0, 1, 100)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 39 = 980
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.590336: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.590336: sys_enter: NR 1 (3, 557f11c57b30, 34, 8, 7ffee02e50f0, 7ffee02185a0)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 56 = 1984
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 14 (2, 7ffce0620060, 0, 8, 8, 5635c92fd4e0)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 14 (0, 7ffce061ff80, 7ffce0620000, 8, 0, 1)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 14 (2, 7ffce0620000, 0, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 14 (0, 7ffce0620080, 7ffce0620100, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.590336: sys_exit: NR 13 = 0
+       invoke.sh-1976  [003] ....  5908.590336: sys_enter: NR 61 (ffffffff, 7ffce0620020, 0, 0, 5635c92fd4e0, 8)
+       invoke.sh-1976  [003] d...  5908.590336: sched_switch: prev_comm=invoke.sh prev_pid=1976 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0     [001] d...  5908.590706: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=invoke.sh next_pid=1984 next_prio=120
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 56 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 39 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 39 = 1984
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 3 (ff, 5635c92f1020, 5635c92f1010, 7f737c75aa10, 7f737c75a740, 0)
+        vfs_proc-1984  [001] ....  5908.590706: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-1984  [001] ....  5908.590706: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 3 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 14 (2, 5635c73c7b00, 0, 8, 7f737c75a740, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 14 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (14, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (15, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (16, 7ffce061fd10, 7ffce061fdb0, 8, 7ffce061ff00, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (2, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (3, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.590706: sys_enter: NR 13 (11, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+        vfs_proc-1984  [001] ....  5908.590706: sys_exit: NR 13 = 0
+        vfs_proc-1984  [001] ....  5908.591706: sys_enter: NR 59 (5635c92fd6e0, 5635c92fd720, 5635c92fab30, 5635c92f1010, 7ffce0620010, 0)
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => prepare_binprm+0xe5/0x180
+ => __do_execve_file.isra.44+0x533/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x111/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x19b/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => open_exec+0x26/0x40
+ => load_elf_binary+0x1f9/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x23a/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.591706: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x31c/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.591706: sys_exit: NR 59 = 0
+        vfs_proc-1984  [001] ....  5908.591706: sys_enter: NR 12 (0, 5f, 4d, 0, 16, 7f7adb784665)
+        vfs_proc-1984  [001] ....  5908.591706: sys_exit: NR 12 = 94677563961344
+          <idle>-0     [002] d...  5908.592435: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.592435: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+        vfs_proc-1984  [001] d...  5908.595186: sched_switch: prev_comm=vfs_proc prev_pid=1984 prev_prio=120 prev_state=R ==> next_comm=kworker/1:0 next_pid=1102 next_prio=120
+     kworker/1:0-1102  [001] d...  5908.595186: sched_switch: prev_comm=kworker/1:0 prev_pid=1102 prev_prio=120 prev_state=I ==> next_comm=vfs_proc next_pid=1984 next_prio=120
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 21 (7f7adb784082, 0, 17, 54, fffffffffffffffc, 7ffe5d3fd120)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 21 = -2
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 21 (7f7adb786dd0, 4, 7f7adb763190, 8, 7f7adb98cc52, 1)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 21 = -2
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 257 (ffffff9c, 7f7adb784428, 80000, 0, 0, 0)
+        vfs_proc-1984  [001] ....  5908.595186: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-1984  [001] ....  5908.595186: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 257 = 3
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 5 (3, 7ffe5d2c26f0, 7ffe5d2c26f0, 0, 0, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 5 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 9 (0, d29f, 1, 2, 3, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 9 = 140165646893056
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 3 (3, d29f, 1, 2, 3, 0)
+        vfs_proc-1984  [001] ....  5908.595186: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-1984  [001] ....  5908.595186: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 3 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 21 (7f7adb784082, 0, 0, 2, 1, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 21 = -2
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 257 (ffffff9c, 7f7adb98cdd0, 80000, 0, 0, 7ffe5d2c289f)
+        vfs_proc-1984  [001] ....  5908.595186: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-1984  [001] ....  5908.595186: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 257 = 3
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 0 (3, 7ffe5d2c28b8, 340, 0, 0, 7ffe5d2c289f)
+        vfs_proc-1984  [001] ....  5908.595186: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-1984  [001] ....  5908.595186: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 0 = 832
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 5 (3, 7ffe5d2c2750, 7ffe5d2c2750, 7f7adb98cdd0, 7f7adb98cdd0, 7f7adb98c170)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 5 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 9 = 140165646884864
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 9 (0, 3f0ae0, 5, 802, 3, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 9 = 140165640560640
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 10 (7f7adb559000, 200000, 0, 1, 3, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 10 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 9 (7f7adb759000, 6000, 3, 812, 3, 1e7000)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 9 = 140165644652544
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 9 (7f7adb75f000, 3ae0, 3, 32, ffffffff, 0)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 9 = 140165644677120
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+        vfs_proc-1984  [001] ....  5908.595186: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-1984  [001] ....  5908.595186: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 3 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 158 (1002, 7f7adb97b4c0, 7f7adb97be10, 7f7adb97a998, 90, 40)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 158 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 10 (7f7adb759000, 4000, 1, 7f7adb97a000, 7ffe5d3fd1b8, 2)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 10 = 0
+        vfs_proc-1984  [001] ....  5908.595186: sys_enter: NR 10 (561bd4f7f000, 1000, 1, 7f7adb98c170, 0, 84)
+        vfs_proc-1984  [001] ....  5908.595186: sys_exit: NR 10 = 0
+            sshd-980   [000] d...  5908.595251: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=R+ ==> next_comm=ksoftirqd/0 next_pid=9 next_prio=120
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 10 (7f7adb98a000, 1000, 1, 7f7adb98b9f0, 0, c0)
+     ksoftirqd/0-9     [000] d...  5908.595251: sched_switch: prev_comm=ksoftirqd/0 prev_pid=9 prev_prio=120 prev_state=S ==> next_comm=sshd next_pid=980 next_prio=120
+            sshd-980   [000] ....  5908.595251: sys_exit: NR 1 = 52
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 10 = 0
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 11 (7f7adb97c000, d29f, d8d00000000, 7f7adb98b9f0, 0, c0)
+            sshd-980   [000] ....  5908.595251: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 11 = 0
+            sshd-980   [000] ....  5908.595251: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.595251: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] d...  5908.595251: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 257 (ffffff9c, 561bd4d7fb54, 2, 0, 7f7adb75ed80, 7f7adb75ed80)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 257 = -2
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 1 (ffffffff, 7ffe5d2c2fb4, b, 0, 7ffe5d2c2fc0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 1 = -9
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 8 (ffffffff, 0, 0, 0, 7ffe5d2c2fc0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 8 = -9
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 0 (ffffffff, 7ffe5d2c2fc0, 100, 0, 7ffe5d2c2fc0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 0 = -9
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 5 (1, 7ffe5d2c27e0, 7ffe5d2c27e0, 0, 7f7adb97b4c0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 5 = 0
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 12 (0, 7f7adb75dc40, 20270, fffffffffffff000, 2, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 12 = 94677563961344
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 12 (561bd6938000, 7f7adb75dc40, 561bd6917000, fffffffffffff000, 2, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 12 = 94677564096512
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 1 (ffffffff, 7ffe5d2c2fb4, b, 0, 7ffe5d2c2fc0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 1 = -9
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 74 (ffffffff, 7ffe5d2c2fb4, ffffffffffffff80, 0, 7ffe5d2c2fc0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 74 = -9
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 1 (1, 561bd6917260, 1b, 2, 0, 0)
+        vfs_proc-1984  [001] ....  5908.595251: sys_exit: NR 1 = 27
+        vfs_proc-1984  [001] ....  5908.595251: sys_enter: NR 231 (0, 3c, 0, 2, e7, ffffffffffffff80)
+        vfs_proc-1984  [001] d...  5908.595251: sched_switch: prev_comm=vfs_proc prev_pid=1984 prev_prio=120 prev_state=Z ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0     [001] d...  5908.595251: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/1:0 next_pid=1102 next_prio=120
+     kworker/1:0-1102  [001] d...  5908.595251: sched_switch: prev_comm=kworker/1:0 prev_pid=1102 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0     [003] d...  5908.595926: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5908.595926: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=invoke.sh next_pid=1976 next_prio=120
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 61 = 1984
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 5635c92fd530)
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 13 = 0
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 14 (2, 7ffce0620100, 0, 8, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 61 (ffffffff, 7ffce061fb90, 1, 0, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 61 = -10
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 15 (ffffffff, 7ffce061fb90, ffffffffffffff80, 0, 5635c92fd4e0, 3)
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR -1 = 0
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 0 (ff, 5635c92fc510, 32, 1, 5635c92fd4e0, 0)
+       invoke.sh-1976  [003] ....  5908.595926: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1976  [003] ....  5908.595926: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 0 = 14
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 14 (0, 7ffce061ffe0, 7ffce0620060, 8, ffff, 101)
+       invoke.sh-1976  [003] ....  5908.595926: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.595926: sys_enter: NR 56 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 101)
+          <idle>-0     [000] d...  5908.597072: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=980 next_prio=120
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 0 (b, 7ffee02144e0, 4000, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 0 = 27
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 39 (557f11c39ec9, b, 29, 0, 1, 100)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 39 = 980
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 1 (3, 557f11c57b30, 44, 8, 7ffee02e50f0, 7ffee02185a0)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 56 = 1985
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 14 (2, 7ffce0620060, 0, 8, 8, 5635c92fd4e0)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce061ff80, 7ffce0620000, 8, 0, 1)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 14 (2, 7ffce0620000, 0, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce0620080, 7ffce0620100, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 2f78756e696c6c61)
+       invoke.sh-1976  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1976  [003] ....  5908.597072: sys_enter: NR 61 (ffffffff, 7ffce0620020, 0, 0, 5635c92fd4e0, 8)
+       invoke.sh-1976  [003] d...  5908.597072: sched_switch: prev_comm=invoke.sh prev_pid=1976 prev_prio=120 prev_state=S ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 56 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 39 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 39 = 1985
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 3 (ff, 5635c92f1020, 5635c92f1010, 7f737c75aa10, 7f737c75a740, 101)
+       invoke.sh-1985  [003] ....  5908.597072: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 3 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (2, 5635c73c7b00, 0, 8, 7f737c75a740, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (14, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (15, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (16, 7ffce061fd10, 7ffce061fdb0, 8, 7ffce061ff00, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (3, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 101)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 59 (5635c92fd6c0, 5635c92fd720, 5635c92fab30, 5635c92f1010, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => prepare_binprm+0xe5/0x180
+ => __do_execve_file.isra.44+0x533/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 59 = -8
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 257 (ffffff9c, 5635c92fd6c0, 0, 0, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 257 = 3
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 0 (3, 7ffce0620060, 80, 0, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 0 = 119
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 3 (3, 7ffce0620060, 80, 0, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 3 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce061ff00, 7ffce061ff80, 8, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (2, 7ffce061ff80, 0, 8, 7ffce0620010, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061fda0, 7ffce061fe40, 8, 7ffce061ff90, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061fda0, 7ffce061fe40, 8, 7ffce061ff90, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (2, 5635c73c3028, 0, 8, 7f737c112c40, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (3, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (3, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 0, 5635c73c7b00, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (3, 7ffce061ff20, 7ffce061ffc0, 8, 7ffce0620110, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92fc490, 7ffce061ffd0, 7ffce061ffd0, 5635c92f1010, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c7181873, 7ffce0620060, 7ffce0620060, 5635c92f1010, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92f8650, 7ffce0620010, 7ffce0620010, 5635c92f8651, 0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92f8650, 7ffce0620010, 7ffce0620010, 5635c92f8651, 0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92f8650, 7ffce0620010, 7ffce0620010, 5635c92f8651, 0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92f8650, 7ffce0620010, 7ffce0620010, 5635c92f8651, 0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 39 (5635c92f8c00, 5635c71824f2, 1, 7f737be91d30, 0, 1)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 39 = 1985
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 110 (5635c92f8a40, 5635c92f1010, 0, 5635c92f1010, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 110 = 1976
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 96 (7ffce0620110, 0, 7ffce06200e0, 5635c92f1010, 7ffce06df080, 7ffce06200e0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 96 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 39 (7ffce0620110, 0, 7ffce06200e0, 5635c92f1010, 7ffce06df080, 7ffce06200e0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 39 = 1985
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 111 (0, b0, 5635c92f9d70, 5635c92f1010, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 111 = 1975
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 16 (2, 540f, 7ffce06201a4, 5635c92f1010, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 16 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061ff10, 7ffce061ffb0, 8, 7ffce0620100, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+          <idle>-0     [002] d...  5908.597072: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.597072: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 0, 5635c73c7bc8, 8, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 257 (ffffff9c, 5635c92fe860, 0, 0, 77, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 257 = 3
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92fe860, 7ffce0620250, 7ffce0620250, 0, 77, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 16 (3, 5401, 7ffce0620260, 5635c92f1010, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 16 = -25
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 8 (3, 0, 1, 5635c92f1010, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 8 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 0 (3, 7ffce06203c0, 50, 5635c92f1010, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 0 = 80
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 8 (3, 0, 0, 5635c92f1010, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 8 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 302 (0, 7, 0, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 302 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 72 (ff, 1, 7ffce06202c4, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 72 = -9
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 33 (3, ff, ffffffffffffff80, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 33 = 255
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 3 (3, ff, ffffffffffffff80, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 3 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 72 (ff, 2, 1, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 72 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 72 (ff, 3, 0, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 72 = 32768
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 5 (ff, 7ffce0620210, 7ffce0620210, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 5 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 8 (ff, 0, 1, 7ffce0620290, 7ffce06202a0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 8 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 0 (ff, 5635c92faa90, 77, 1, 0, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 0 = 119
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 5 (1, 7ffce061f8c0, 7ffce061f8c0, ffffffff, 5635c92fedf0, 1)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 5 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 1 (1, 5635c92fefc0, 27, a, a, 24)
+       invoke.sh-1985  [003] d...  5908.597072: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=R+ ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5908.597072: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] .N..  5908.597072: sys_exit: NR 1 = 39
+       invoke.sh-1985  [003] d...  5908.597072: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5908.597072: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c7181873, 7ffce0620000, 7ffce0620000, 7f737be91430, ffff, 1)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75cf, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75de, 7f737be95d20)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75e8, 7f737be95390)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75f1, 7f737be951d0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75f7, 7f737be95b40)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 107 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 108 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 102 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 104 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 21 (5635c92ff520, 1, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 107 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 108 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 102 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 104 (5635c92ff520, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 21 (5635c92ff520, 4, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061ff20, 7ffce061ff20, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 107 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 108 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 102 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 104 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 21 (5635c92ff520, 1, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 4 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 107 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 108 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 102 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 104 (5635c92ff520, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 21 (5635c92ff520, 4, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce061ffe0, 7ffce0620060, 8, fcff, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 8 (ff, ffffffffffffffbd, 1, 8, fcff, 0)
+       invoke.sh-1985  [003] ....  5908.597072: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1985  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 8 = 52
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 56 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 56 = 1986
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (2, 7ffce0620060, 0, 8, 7f737c75a740, 0)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce061ff80, 7ffce0620000, 8, 0, 1)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (2, 7ffce0620000, 0, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 14 (0, 7ffce0620080, 7ffce0620100, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5908.597072: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5908.597072: sys_enter: NR 61 (ffffffff, 7ffce0620020, 0, 0, 5635c92fd4e0, 8)
+       invoke.sh-1985  [003] d...  5908.597072: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=S ==> next_comm=invoke.sh next_pid=1986 next_prio=120
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 56 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 39 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 39 = 1986
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 3 (ff, 5635c92f1020, 5635c92f1010, 7f737c75aa10, 7f737c75a740, 0)
+           sleep-1986  [003] ....  5908.597072: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 3 = 0
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 1 = 68
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 14 (2, 5635c73c7b00, 0, 8, 7f737c75a740, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 14 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (14, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (15, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (16, 7ffce061fd10, 7ffce061fdb0, 8, 7ffce061ff00, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (2, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (3, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 13 (11, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 0)
+           sleep-1986  [003] ....  5908.597072: sys_exit: NR 13 = 0
+           sleep-1986  [003] ....  5908.597072: sys_enter: NR 59 (5635c92ff520, 5635c92ff7f0, 5635c92fab30, 5635c92f1010, 7ffce0620010, 0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+           sleep-1986  [003] ....  5908.597072: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 23 = 1
+           sleep-1986  [003] ....  5908.597072: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+           sleep-1986  [003] d...  5908.597072: sched_switch: prev_comm=invoke.sh prev_pid=1986 prev_prio=120 prev_state=R+ ==> next_comm=migration/3 next_pid=24 next_prio=0
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 0 (b, 7ffee02144e0, 4000, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 0 = 40
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 39 (557f11c39ed6, 6, 36, 0, 1, 100)
+            sshd-980   [000] ....  5908.597072: sys_exit: NR 39 = 980
+            sshd-980   [000] ....  5908.597072: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+     migration/3-24    [003] d...  5908.597072: sched_switch: prev_comm=migration/3 prev_pid=24 prev_prio=0 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.598140: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=invoke.sh next_pid=1986 next_prio=120
+            sshd-980   [000] ....  5908.598140: sys_exit: NR 228 = 0
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+            sshd-980   [000] ....  5908.598140: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => prepare_binprm+0xe5/0x180
+ => __do_execve_file.isra.44+0x533/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-980   [000] ....  5908.598140: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5908.598140: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5908.598140: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.598140: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5908.598140: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5908.598140: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x111/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x19b/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+            sshd-980   [000] ....  5908.598140: sys_exit: NR 228 = 0
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => open_exec+0x26/0x40
+ => load_elf_binary+0x1f9/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+            sshd-980   [000] ....  5908.598140: sys_enter: NR 1 (3, 557f11c57b30, 4c, 8, 7ffee02e50f0, 7ffee02185a0)
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x23a/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x31c/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 59 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 12 (0, 5f, 4d, 0, 16, 7f32baf3b665)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 12 = 94773810315264
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 21 (7f32baf3b082, 0, 17, 54, fffffffffffffffc, 7ffdce3ca120)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 21 = -2
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 21 (7f32baf3ddd0, 4, 7f32baf1a190, 8, 7f32bb143c52, 1)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 21 = -2
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 257 (ffffff9c, 7f32baf3b428, 80000, 0, ffff, 0)
+           sleep-1986  [002] ....  5908.598140: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 257 = 3
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 5 (3, 7ffdce383580, 7ffdce383580, 0, ffff, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 5 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 9 (0, d29f, 1, 2, 3, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 9 = 139855863689216
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 3 (3, d29f, 1, 2, 3, 0)
+           sleep-1986  [002] ....  5908.598140: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 3 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 21 (7f32baf3b082, 0, 0, 2, 1, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 21 = -2
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 257 (ffffff9c, 7f32bb143dd0, 80000, 0, 0, 7ffdce38372f)
+           sleep-1986  [002] ....  5908.598140: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 257 = 3
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 0 (3, 7ffdce383748, 340, 0, 0, 7ffdce38372f)
+           sleep-1986  [002] ....  5908.598140: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 0 = 832
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 5 (3, 7ffdce3835e0, 7ffdce3835e0, 7f32bb143dd0, 7f32bb143dd0, 7f32bb143170)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 5 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 9 = 139855863681024
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 9 (0, 3f0ae0, 5, 802, 3, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 9 = 139855857356800
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 10 (7f32bad10000, 200000, 0, 1, 3, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 10 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 9 (7f32baf10000, 6000, 3, 812, 3, 1e7000)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 9 = 139855861448704
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 9 (7f32baf16000, 3ae0, 3, 32, ffffffff, 0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 9 = 139855861473280
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+           sleep-1986  [002] ....  5908.598140: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [002] ....  5908.598140: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 3 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 158 (1002, 7f32bb132540, 7f32bb132e60, 7f32bb1319e8, 90, 40)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 158 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 10 (7f32baf10000, 4000, 1, 7f32bb131000, 7ffdce3ca1b8, 2)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 10 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 10 (56323e036000, 1000, 1, 7f32bb143170, 0, 54d)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 10 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 10 (7f32bb141000, 1000, 1, 7f32bb1429f0, 0, c0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 10 = 0
+           sleep-1986  [002] ....  5908.598140: sys_enter: NR 11 (7f32bb133000, d29f, d8d00000000, 7f32bb1429f0, 0, c0)
+           sleep-1986  [002] ....  5908.598140: sys_exit: NR 11 = 0
+            sshd-980   [000] ....  5908.599216: sys_exit: NR 1 = 76
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 12 (0, 7f32baf14c40, 20270, fffffffffffff000, 2, 0)
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 12 = 94773810315264
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 12 (56323f4e5000, 7f32baf14c40, 56323f4c4000, fffffffffffff000, 2, 0)
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 12 = 94773810450432
+            sshd-980   [000] ....  5908.599216: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 257 (ffffff9c, 7f32bace4190, 80000, 0, 1, 7f32bac973a0)
+           sleep-1986  [002] ....  5908.599216: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+           sleep-1986  [002] ....  5908.599216: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 257 = 3
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 5 (3, 7f32baf15ac0, 7f32baf15ac0, 0, 1, 7f32bac973a0)
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 5 = 0
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 9 (0, 19ae70, 1, 2, 3, 0)
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 9 = 139855861997568
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 3 (3, 19ae70, 2ac7, 2, 3, 0)
+           sleep-1986  [002] ....  5908.599216: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [002] ....  5908.599216: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5908.599216: sys_exit: NR 3 = 0
+            sshd-980   [000] ....  5908.599216: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5908.599216: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] d...  5908.599216: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+           sleep-1986  [002] ....  5908.599216: sys_enter: NR 35 (7ffdce383e80, 0, 0, 0, 0, 0)
+           sleep-1986  [002] d...  5908.599216: sched_switch: prev_comm=sleep prev_pid=1986 prev_prio=120 prev_state=S ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.600271: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.600271: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.605320: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.605320: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.609295: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.609295: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.613287: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.613287: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.617636: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5908.617636: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [000] d...  5908.809158: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/0:1 next_pid=1645 next_prio=120
+     kworker/0:1-1645  [000] d...  5908.809158: sched_switch: prev_comm=kworker/0:1 prev_pid=1645 prev_prio=120 prev_state=I ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.834260: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5908.834260: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=D ==> next_comm=kworker/2:2 next_pid=1239 next_prio=120
+     kworker/2:2-1239  [002] d...  5908.834260: sched_switch: prev_comm=kworker/2:2 prev_pid=1239 prev_prio=120 prev_state=D ==> next_comm=kworker/2:3 next_pid=1913 next_prio=120
+     kworker/2:3-1913  [002] d...  5908.834260: sched_switch: prev_comm=kworker/2:3 prev_pid=1913 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5908.838187: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5908.838187: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=R+ ==> next_comm=kworker/2:2 next_pid=1239 next_prio=120
+     kworker/2:2-1239  [002] d...  5908.838187: sched_switch: prev_comm=kworker/2:2 prev_pid=1239 prev_prio=120 prev_state=I ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5908.838187: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5909.616822: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=cron next_pid=569 next_prio=120
+            cron-569   [002] ....  5909.616822: sys_exit: NR 35 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (7f5be9f82227, 7ffd0da0c550, 7ffd0da0c550, 0, 10, 7f5be9f3bf20)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (5643dbde4c01, 7ffd0da0a340, 7ffd0da0a340, 2ce33e6c02ce33e7, 7f5be9f7cd00, a3d70a3d70a3d70b)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (5643dbde4c0a, 7ffd0da0a3d0, 7ffd0da0a3d0, 2ce33e6c02ce33e7, 7f5be9f7cd00, a3d70a3d70a3d70b)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (5643dbde4c17, 7ffd0da0a460, 7ffd0da0a460, 2ce33e6c02ce33e7, 7f5be9f7cd00, a3d70a3d70a3d70b)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (7ffd0da0a680, 7ffd0da0a4f0, 7ffd0da0a4f0, ffffffee, 5643dc3bb508, 12)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 4 (7ffd0da0a680, 7ffd0da0a4f0, 7ffd0da0a4f0, fffffffb, 5643dc3b8bb8, 5)
+            cron-569   [002] ....  5909.616822: sys_exit: NR 4 = 0
+            cron-569   [002] ....  5909.616822: sys_enter: NR 35 (7ffd0da0c6a0, 7ffd0da0c6a0, 1, 0, 10, 1)
+            cron-569   [002] d...  5909.616822: sched_switch: prev_comm=cron prev_pid=569 prev_prio=120 prev_state=S ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [000] d...  5909.993568: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/0:1 next_pid=1645 next_prio=120
+     kworker/0:1-1645  [000] d...  5909.993568: sched_switch: prev_comm=kworker/0:1 prev_pid=1645 prev_prio=120 prev_state=I ==> next_comm=ksoftirqd/0 next_pid=9 next_prio=120
+     ksoftirqd/0-9     [000] d...  5909.993568: sched_switch: prev_comm=ksoftirqd/0 prev_pid=9 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [000] d...  5910.500203: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/0:1 next_pid=1645 next_prio=120
+     kworker/0:1-1645  [000] d...  5910.500203: sched_switch: prev_comm=kworker/0:1 prev_pid=1645 prev_prio=120 prev_state=I ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [003] d...  5910.718050: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/3:5 next_pid=994 next_prio=120
+     kworker/3:5-994   [003] d...  5910.718050: sched_switch: prev_comm=kworker/3:5 prev_pid=994 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5910.890173: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5910.890173: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=D ==> next_comm=kworker/2:2 next_pid=1239 next_prio=120
+     kworker/2:2-1239  [002] d...  5910.892359: sched_switch: prev_comm=kworker/2:2 prev_pid=1239 prev_prio=120 prev_state=D ==> next_comm=kworker/2:3 next_pid=1913 next_prio=120
+     kworker/2:3-1913  [002] d...  5910.892359: sched_switch: prev_comm=kworker/2:3 prev_pid=1913 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5910.894811: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5910.895334: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=R+ ==> next_comm=ksoftirqd/2 next_pid=20 next_prio=120
+     ksoftirqd/2-20    [002] d...  5910.895334: sched_switch: prev_comm=ksoftirqd/2 prev_pid=20 prev_prio=120 prev_state=S ==> next_comm=kworker/2:2 next_pid=1239 next_prio=120
+     kworker/2:2-1239  [002] d...  5910.895334: sched_switch: prev_comm=kworker/2:2 prev_pid=1239 prev_prio=120 prev_state=I ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5910.895334: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [000] d...  5911.010600: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=gmain next_pid=605 next_prio=120
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 7 = 0
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 228 (1, 7f52c7632bf0, 7f52c7632bf0, 7f52c00025a0, 7ffccd3cb090, 7f52c7632bf0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 228 = 0
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 254 (7, 55692c9ec3a0, 1002fce, 7f52c00025a0, 56cd36aa, 7f52c7632bf0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 254 = -2
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 254 (7, 55692c9eb980, 1002fce, 7f52c00025a0, b10563a8, 7f52c7632bf0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 254 = -2
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 254 (7, 55692c9eb450, 1002fce, 7f52c00025a0, b10563a8, 7f52c7632bf0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 254 = -2
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 254 (7, 55692c9eb100, 1002fce, 7f52c00025a0, b10563a8, 7f52c7632bf0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 254 = -2
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 228 (1, 7f52c7632be0, 7f52c7632be0, 7f52c00025a0, 7ffccd3cb090, 7f52c7632be0)
+           gmain-605   [000] ....  5911.010600: sys_exit: NR 228 = 0
+           gmain-605   [000] ....  5911.010600: sys_enter: NR 7 (55692c9cb410, 2, f96, 7f52c00025a0, 0, 55692c9e82a0)
+           gmain-605   [000] d...  5911.010600: sched_switch: prev_comm=gmain prev_pid=605 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5911.014001: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=irqbalance next_pid=554 next_prio=120
+      irqbalance-554   [002] ....  5911.014001: sys_exit: NR 7 = 0
+      irqbalance-554   [002] ....  5911.014001: sys_enter: NR 228 (1, 7ffe48f9d740, 7ffe48f9d740, 559c02158820, 7ffe48ff7090, 7ffe48f9d740)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 228 = 0
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 257 (ffffff9c, 559c0121a155, 0, 0, 0, 7ffe48f9d740)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 5 (6, 7ffe48f9d0f0, 7ffe48f9d0f0, 0, 7f153b4a7f00, 7ffe48f9d740)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 7ffe48f9d740)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 0 = 1024
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 3 (6, 1, 7f153a543760, 1, 7f153b4a7f00, 3)
+      irqbalance-554   [002] ....  5911.014604: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.014604: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 257 (ffffff9c, 559c0121a1bd, 0, 0, 0, 3)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 5 (6, 7ffe48f9d510, 7ffe48f9d510, 0, 7f153b4a7f00, 3)
+      irqbalance-554   [002] ....  5911.014604: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.014604: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 3)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 1024
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 2030203020302030, 0, 2030203020323536)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 262
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, 2030203020302030, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 257 (ffffff9c, 7ffe48f9c680, 0, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 257 = 6
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 5 (6, 7ffe48f9bef0, 7ffe48f9bef0, 0, 7f153b4a7f00, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 5 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 0 (6, 559c0214c540, 400, 0, 0, 0)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 0 = 2
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 3 (6, 1, 7f153a543760, f, 7f153b4a7f00, ffffffffffffffff)
+      irqbalance-554   [002] ....  5911.017591: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+      irqbalance-554   [002] ....  5911.017591: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 3 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 228 (1, 7ffe48f9d730, 7ffe48f9d730, f, 7ffe48ff7090, 7ffe48f9d730)
+      irqbalance-554   [002] ....  5911.017591: sys_exit: NR 228 = 0
+      irqbalance-554   [002] ....  5911.017591: sys_enter: NR 7 (559c0215a5e0, 2, 26fe, 559c02158820, 0, 559c02159840)
+      irqbalance-554   [002] d...  5911.018165: sched_switch: prev_comm=irqbalance prev_pid=554 prev_prio=120 prev_state=S ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5911.018165: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5911.029477: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5911.029477: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=I ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5911.029477: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5911.040476: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5911.040476: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5911.524503: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1 next_pid=90 next_prio=120
+     kworker/2:1-90    [002] d...  5911.524503: sched_switch: prev_comm=kworker/2:1 prev_pid=90 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d...  5911.601763: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sleep next_pid=1986 next_prio=120
+           sleep-1986  [002] ....  5911.601763: sys_exit: NR 35 = 0
+           sleep-1986  [002] ....  5911.601763: sys_enter: NR 3 (1, 1, 7f32baf10760, 0, 7f32bb132540, 7f32bb132540)
+           sleep-1986  [002] ....  5911.601763: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [002] ....  5911.601763: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5911.601763: sys_exit: NR 3 = 0
+           sleep-1986  [002] ....  5911.601763: sys_enter: NR 3 (2, 1, 7f32baf10760, 0, 7f32bb132540, 7f32bb132540)
+           sleep-1986  [002] ....  5911.601763: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+           sleep-1986  [002] ....  5911.601763: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           sleep-1986  [002] ....  5911.601763: sys_exit: NR 3 = 0
+           sleep-1986  [002] ....  5911.601763: sys_enter: NR 231 (0, 3c, 0, 2, e7, ffffffffffffff80)
+           sleep-1986  [002] d...  5911.601763: sched_switch: prev_comm=sleep prev_pid=1986 prev_prio=120 prev_state=Z ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [003] d...  5911.602349: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 61 = 1986
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 5635c92fec00)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 14 (2, 7ffce0620100, 0, 8, 5635c92fd4e0, 3)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 61 (ffffffff, 7ffce061fb90, 1, 0, 5635c92fd4e0, 3)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 61 = -10
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 15 (ffffffff, 7ffce061fb90, ffffffffffffff80, 0, 5635c92fd4e0, 3)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR -1 = 0
+          <idle>-0     [002] d...  5911.602349: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d...  5911.602349: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 0 (ff, 5635c92faa90, 77, 1, 5635c92fd4e0, 0)
+       invoke.sh-1985  [003] ....  5911.602349: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1985  [003] ....  5911.602349: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 0 = 67
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 1 (1, 5635c92fefc0, c, a, a, b)
+       invoke.sh-1985  [003] d...  5911.602349: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=R+ ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5911.602349: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] .N..  5911.602349: sys_exit: NR 1 = 12
+       invoke.sh-1985  [003] d...  5911.602349: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:2 next_pid=1918 next_prio=120
+    kworker/u8:2-1918  [003] d...  5911.602349: sched_switch: prev_comm=kworker/u8:2 prev_pid=1918 prev_prio=120 prev_state=I ==> next_comm=invoke.sh next_pid=1985 next_prio=120
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c7181873, 7ffce0620000, 7ffce0620000, 5635c92f1010, f8ff, 642f6c656e72656b)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75cf, 7f737be95f20)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75de, 7f737be95d20)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75e8, 7f737be95390)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75f1, 7f737be951d0)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75f7, 7f737be95b40)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = -2
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fef0, 7ffce061fef0, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 107 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 108 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 102 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 104 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 21 (5635c92feca0, 1, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 107 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 108 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 102 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 104 (5635c92feca0, 7ffce061fe10, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 21 (5635c92feca0, 4, 7ffce061fe10, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061ff20, 7ffce061ff20, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 107 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 108 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 102 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 104 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 21 (5635c92feca0, 1, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 4 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 4 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 107 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 107 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 108 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 108 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 102 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 102 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 104 (5635c92feca0, 7ffce061fe40, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 104 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 21 (5635c92feca0, 4, 7ffce061fe40, 5635c92f1010, 5635c92f75fc, 7f737be95940)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 21 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 14 (0, 7ffce061ffe0, 7ffce0620060, 8, 7f737c1178f8, 642f6c656e72656b)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 8 (ff, ffffffffffffffff, 1, 8, 7f737c1178f8, 642f6c656e72656b)
+       invoke.sh-1985  [003] ....  5911.602349: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+       invoke.sh-1985  [003] ....  5911.602349: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 8 = 118
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 56 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 642f6c656e72656b)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 56 = 1987
+       invoke.sh-1985  [003] ....  5911.602349: sys_enter: NR 14 (2, 7ffce0620060, 0, 8, 8, 5635c92fd4e0)
+       invoke.sh-1985  [003] ....  5911.602349: sys_exit: NR 14 = 0
+          <idle>-0     [000] d...  5911.603001: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=980 next_prio=120
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 0 (b, 7ffee02144e0, 4000, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 0 = 13
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 39 (557f11c39ebb, 9, 1b, 0, 1, 100)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 39 = 980
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 23 = 1
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 14 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [000] ....  5911.603001: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5911.603001: sys_enter: NR 1 (3, 557f11c57b30, 34, 8, 7ffee02e50f0, 7ffee02185a0)
+       invoke.sh-1985  [003] ....  5911.603001: sys_enter: NR 14 (0, 7ffce061ff80, 7ffce0620000, 8, 0, 1)
+       invoke.sh-1985  [003] ....  5911.603001: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5911.603001: sys_enter: NR 14 (2, 7ffce0620000, 0, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5911.603001: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5911.603001: sys_enter: NR 14 (0, 7ffce0620080, 7ffce0620100, 8, feff, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5911.603001: sys_exit: NR 14 = 0
+       invoke.sh-1985  [003] ....  5911.603001: sys_enter: NR 13 (2, 7ffce061fdc0, 7ffce061fe60, 8, 7ffce061ffb0, 2f78756e696c6c61)
+       invoke.sh-1985  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1985  [003] ....  5911.603001: sys_enter: NR 61 (ffffffff, 7ffce0620020, 0, 0, 5635c92fd4e0, 8)
+       invoke.sh-1985  [003] d...  5911.603001: sched_switch: prev_comm=invoke.sh prev_pid=1985 prev_prio=120 prev_state=S ==> next_comm=invoke.sh next_pid=1987 next_prio=120
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 56 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 39 (1200011, 0, 0, 7f737c75aa10, 7f737c75a740, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 39 = 1987
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (ff, 5635c92f1020, 5635c92f1010, 7f737c75aa10, 7f737c75a740, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 14 (2, 5635c73c7b00, 0, 8, 7f737c75a740, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 14 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (14, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (15, 7ffce061fd00, 7ffce061fda0, 8, 7ffce061fef0, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (16, 7ffce061fd10, 7ffce061fdb0, 8, 7ffce061ff00, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (2, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (3, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 13 (11, 7ffce061fe20, 7ffce061fec0, 8, 7ffce0620010, 642f6c656e72656b)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 59 (5635c92feca0, 5635c92ffa50, 5635c92fab30, 5635c92f1010, 7ffce0620010, 0)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => prepare_binprm+0xe5/0x180
+ => __do_execve_file.isra.44+0x533/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x111/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x19b/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => open_exec+0x26/0x40
+ => load_elf_binary+0x1f9/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x23a/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x31c/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 59 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 12 (0, 5f, 4d, 0, 16, 7f75f7237665)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 12 = 94263792562176
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 17, 54, fffffffffffffffc, 7ffec4783120)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7239dd0, 4, 7f75f7216190, 8, 7f75f743fc52, 1)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f7237428, 80000, 0, 0, 0)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d4d0, 7ffec472d4d0, 0, 0, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, d29f, 1, 2, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144636260352
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, d29f, 1, 2, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, 2, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f743fdd0, 80000, 0, 0, 7ffec472d67f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d698, 340, 0, 0, 7ffec472d67f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d530, 7ffec472d530, 7f75f743fdd0, 7f75f743fdd0, 7f75f743f170)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144636252160
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 2278d0, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144631799808
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f7013000, 1ff000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f7212000, 2000, 3, 812, 3, 24000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144634044416
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f7214000, 18d0, 3, 32, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144634052608
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, 7f75f7234390, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742d4d0, 80000, 0, 0, 7ffec472d64f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d668, 340, 0, 0, 7ffec472d64f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d500, 7ffec472d500, 7f75f742d4d0, 7f75f742d4d0, 7f75f743f170)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 207200, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144629669888
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f6ded000, 1ff000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f6fec000, 2000, 3, 812, 3, 6000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144631791616
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, 7f75f7234610, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742d9d0, 80000, 0, 0, 7ffec472d61f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d638, 340, 0, 0, 7ffec472d61f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d4d0, 7ffec472d4d0, 7f75f742d9d0, 7f75f742d9d0, 7f75f743f170)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 2040d8, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144627552256
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f6be5000, 1ff000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f6de4000, 2000, 3, 812, 3, 3000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144629661696
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, fffffffffffff6fe, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742ded0, 80000, 0, 0, 7ffec472d5ef)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d608, 340, 0, 0, 7ffec472d5ef)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d4a0, 7ffec472d4a0, 7f75f742ded0, 7f75f742ded0, 7f75f743f170)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 3f0ae0, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144623419392
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f69d7000, 200000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f6bd7000, 6000, 3, 812, 3, 1e7000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144627511296
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f6bdd000, 3ae0, 3, 32, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144627535872
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, fffffffffffff672, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742e3b0, 80000, 0, 0, 7ffec472d4af)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d4c8, 340, 0, 0, 7ffec472d4af)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d360, 7ffec472d360, 7f75f742e3b0, 7f75f742e3b0, 7f75f742d000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 271108, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144620855296
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f65ee000, 200000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f67ee000, 2000, 3, 812, 3, 70000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144623411200
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, fffffffffffff67f, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742e8b0, 80000, 0, 0, 7ffec472d47f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d498, 340, 0, 0, 7ffec472d47f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d330, 7ffec472d330, 7f75f742e8b0, 7f75f742e8b0, 7f75f742d000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 203110, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144618741760
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 10 (7f75f637d000, 1ff000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (7f75f657c000, 2000, 3, 812, 3, 2000)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144620847104
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.603001: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 21 (7f75f7237082, 0, 0, fffffffffffffce3, 1, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 257 (ffffff9c, 7f75f742eeb0, 80000, 0, 0, 7ffec472d41f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 0 (3, 7ffec472d438, 340, 0, 0, 7ffec472d41f)
+       invoke.sh-1987  [003] ....  5911.603001: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+       invoke.sh-1987  [003] ....  5911.603001: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 0 = 832
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 5 (3, 7ffec472d2d0, 7ffec472d2d0, 7f75f742eeb0, 7f75f742eeb0, 7f75f742e3e0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.603001: sys_exit: NR 9 = 140144636243968
+       invoke.sh-1987  [003] ....  5911.603001: sys_enter: NR 9 (0, 21e480, 5, 802, 3, 0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 9 = 140144616517632
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f6175000, 1ff000, 0, 1, 3, 0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 9 (7f75f6374000, 2000, 3, 812, 3, 19000)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 9 = 140144618717184
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 9 (7f75f6376000, 3480, 3, 32, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 9 = 140144618725376
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+       invoke.sh-1987  [003] ....  5911.604324: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.604324: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 9 (0, 3000, 3, 22, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 9 = 140144636231680
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 158 (1002, 7f75f7428800, 7f75f7429150, 22, ffffffff, 0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 158 = 0
+            sshd-980   [000] ....  5911.604324: sys_exit: NR 1 = 52
+            sshd-980   [000] ....  5911.604324: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f6bd7000, 4000, 1, 7f75f742def0, 7ffec47831b8, 2)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f6374000, 1000, 1, 7f75f742b000, 1, 798)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f657c000, 1000, 1, 7f75f742e8e0, 1, 798)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+            sshd-980   [000] ....  5911.604324: sys_exit: NR 228 = 0
+            sshd-980   [000] ....  5911.604324: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [000] d...  5911.604324: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f67ee000, 1000, 1, 7f75f742e3e0, 0, 54d)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f6de4000, 1000, 1, 7f75f742da00, 1, 798)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f6fec000, 1000, 1, 7f75f742d500, 1, 798)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f7212000, 1000, 1, 7f75f742d000, 1, ac)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (55bb7ecfc000, 1000, 1, 7f75f743f170, 0, 66)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 10 (7f75f743d000, 1000, 1, 7f75f743e9f0, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 10 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 11 (7f75f742f000, d29f, d8e00000000, 7f75f743e9f0, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 11 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 218 (7f75f7428ad0, 7ffec472df98, 7f75f7428800, 7f75f743e9f0, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 218 = 1987
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 273 (7f75f7428ae0, 18, 7f75f7428800, 7f75f743e9f0, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 273 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 13 (20, 7ffec472dd00, 0, 8, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 13 (21, 7ffec472dd00, 0, 8, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 13 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 14 (1, 7ffec472de78, 0, 8, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 14 = 0
+       invoke.sh-1987  [003] ....  5911.604324: sys_enter: NR 302 (0, 3, 0, 7ffec472de60, 0, c0)
+       invoke.sh-1987  [003] ....  5911.604324: sys_exit: NR 302 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 137 (7f75f700bc63, 7ffec472de30, 1000, 9, 4, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 137 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 137 (7f75f700bc63, 7ffec472dd20, 1000, 9, 4, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 137 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 12 (0, 7f75f6bdbc40, 20270, fffffffffffff000, 2, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 12 = 94263792562176
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 12 (55bb7fe10000, 7f75f6bdbc40, 55bb7fdef000, fffffffffffff000, 2, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 12 = 94263792697344
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 21 (7f75f700bc8b, 0, 7f75f7214588, 9, 2, 7f75f695e1b0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 21 = -2
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 257 (ffffff9c, 7f75f69ab190, 80000, 0, 1, 7f75f695e3a0)
+       invoke.sh-1987  [003] ....  5911.605274: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+       invoke.sh-1987  [003] ....  5911.605274: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 257 = 3
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 5 (3, 7f75f6bdcac0, 7f75f6bdcac0, 0, 1, 7f75f695e3a0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 5 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 9 (0, 19ae70, 1, 2, 3, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 9 = 140144634548224
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 3 (3, 19ae70, 2ac7, 2, 3, 0)
+       invoke.sh-1987  [003] ....  5911.605274: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+       invoke.sh-1987  [003] ....  5911.605274: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 3 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 107 (7ffec472dd90, 1, 0, 55bb7fdef010, 7f75f6bdcd80, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 107 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 4 (7ffec472e8af, 7ffec472dc80, 7ffec472dc80, 55bb7fdef010, 7ffec472dd90, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 4 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 4 (7ffec472e88f, 7ffec472d970, 7ffec472d970, 0, 0, 7ffec472dd90)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 4 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 4 (7ffec472e8af, 7ffec472da00, 7ffec472da00, 0, 0, 0)
+       invoke.sh-1987  [003] ....  5911.605274: sys_exit: NR 4 = 0
+       invoke.sh-1987  [003] ....  5911.605274: sys_enter: NR 257 (ffffff9c, 7ffec472e88f, 0, 0, 7ffec472dd90, 0)

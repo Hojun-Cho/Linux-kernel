@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <signal.h>
-#include <singal.h>
 #include <string.h>
 #include <fcntl.h>
 
@@ -13,15 +12,15 @@ int main()
 {
     int fd= 0;
     ssize_t read_buf_size;
-    off_t new _file_pos;
+    off_t new_file_pos;
 
     char buf[256];
     char string[] = "hello hojun";
 
-    memseet(buf,0x0,sizeof(buf));
+    memset(buf,0x0,sizeof(buf));
 
-    fd = op(FILANAME,O_RDWR);
-    print("%s",buf);
+    fd = open(FILANAME,O_RDWR);
+    printf("%s",buf);
 
     write(fd,string,strlen(string));
 
@@ -32,7 +31,7 @@ int main()
 
     write(fd,string,strlen(string));
     if( -1 == fsync(fd)){
-        print("fscny fail");
+        printf("fscny fail");
         exit(0);
     }
     close(fd);
