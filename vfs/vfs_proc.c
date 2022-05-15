@@ -6,7 +6,7 @@
 #include <string.h>
 #include <fcntl.h>
 
-#define FILANAME  "sampel.txt"
+#define FILANAME  "sample.txt"
 
 int main()
 {
