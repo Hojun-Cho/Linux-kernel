@@ -1,4 +1,4 @@
-echo 0 /sys/kernel/debug/tracing/tracing_on
+echo 0 >  /sys/kernel/debug/tracing/tracing_on
 sleep 3
 echo "tracing off"
 
