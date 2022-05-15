@@ -20,6 +20,7 @@ echo 1 > /sys/kernel/debug/tracing/events/raw_syscalls/sys_exit/enable
 sleep 1
 echo "event enabled"
 
+echo do_sys_open > /sys/kernel/debug/tracing/set_ftrace_filter
 echo ext4_file_open ext4_file_write_iter > /sys/kernel/debug/tracing/set_ftrace_filter
 echo ext4_file_read_iter ext4_llseek >> /sys/kernel/debug/tracing/set_ftrace_filter
 echo ext4_sync_file __close_fd >> /sys/kernel/debug/tracing//set_ftrace_filter
