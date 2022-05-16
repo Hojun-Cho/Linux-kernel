@@ -14,12 +14,21 @@ int main(){
 	struct statfs file_sys_info ;
 	char fname[BUFF_SIZE] = {0,};
 	strcpy(fname,GENERAL_DIR);
-	statfs(fname,&file_sys_info);
-	printf("statfs under general => %s\n",GENERAL_DIR);
-	
+	printf("statfs under %s \n",GENERAL_DIR);
+        if(statfs(fname,&file_sys_info)){
+                printf("unable GENERAL_DIR");
+                exit(1);
+        }
+
+
 	strcpy(fname,PROC_DIR);
-	statfs(fname,&file_sys_info);
-	printf("statfs under proc => %s\n",fname);
+        printf("statfs under proc => %s\n",fname);
+        if(statfs(fname,&file_sys_info)){
+                printf("unable GENERAL_DIR");
+                exit(1);
+        }
+
+
 	
 	return 0;
 
