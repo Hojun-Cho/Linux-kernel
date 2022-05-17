@@ -15,12 +15,9 @@ echo "set_ftrace_filter init"
 
 
 
-echo do_sys_open > /sys/kernel/debug/tracing/set_ftrace_filter
-echo __x64_sys_openat >  /sys/kernel/debug/tracing/set_ftrace_filter
 echo ext4_create > /sys/kernel/debug/tracing/set_ftrace_filter
 echo alloc_inode >  /sys/kernel/debug/tracing/set_ftrace_filter
 echo ext4_alloc_inode > /sys/kernel/debug/tracing/set_ftrace_filter
-echo ext4_file_open  > /sys/kernel/debug/tracing/set_ftrace_filter
 sleep 1
 echo "set_ftrace_filter"
 

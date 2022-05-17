@@ -3,7 +3,7 @@
 void main()
 {
 	FILE *file;
-	file = fopen("file.txt","w+");
+	file = fopen("temp.txt","w+");
 
 	if(file ==NULL) 
 	{
