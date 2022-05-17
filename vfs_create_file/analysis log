@@ -1,0 +1,354 @@
+        # 실제 실행하는 부분 59  syscall은 ececve sys_call
+        vfs_proc-2621  [000] .... 12118.160802: sys_enter: NR 59 (55ee5441bc50, 55ee54418ce0, 55ee545ed3f0, 8, 7ffe8fac9b20, 0)
+        vfs_proc-2621  [000] .... 12118.160802: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-2621  [000] .... 12118.160802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ ## struct file구조체에서 함수 포인터를 이용 => 파일 시스템에 맞는 open을 수행한다
+      #  if (!open)
+      #   open = f->f_op->open;
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ ## do_open_execat => (name[0] =='\0') => fsnotify_open
+ => do_open_execat+0x83/0x1a0
+ ## isra gcc 최적화로 인해 들어감
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        ## read를 수행 
+        vfs_proc-2621  [000] .... 12118.160802: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.160802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ # new_sync_read => filp->f_op->read_iter(&kiocb, &iter); ext4의 f_op안에는 ext_file_read_iter이 저정(하나의 다형성??) 
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => prepare_binprm+0xe5/0x180
+ => __do_execve_file.isra.44+0x533/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.161802: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.161802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x111/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.161802: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.161802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x19b/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.161802: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-2621  [000] .... 12118.161802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => open_exec+0x26/0x40
+ => load_elf_binary+0x1f9/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.161802: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.161802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_binary+0x23a/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.161802: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.161802: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => kernel_read+0x2c/0x40
+ => load_elf_phdrs+0x6b/0xa0
+ => load_elf_binary+0x31c/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 228 = 0
+        vfs_proc-2621  [000] .... 12118.161802: sys_exit: NR 59 = 0
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 23 = 1
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+        vfs_proc-2621  [000] .... 12118.161802: sys_enter: NR 12 (0, 5f, 4d, 0, 16, 7fedd5616665)
+        vfs_proc-2621  [000] .... 12118.161802: sys_exit: NR 12 = 94001462497280
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 1 (3, 557f11c57b30, 24, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 1 = 36
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [003] .... 12118.161802: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.161802: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [003] d... 12118.161802: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.165223: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d... 12118.165223: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+        vfs_proc-2621  [000] d... 12118.165223: sched_switch: prev_comm=vfs_proc prev_pid=2621 prev_prio=120 prev_state=R ==> next_comm=ksoftirqd/0 next_pid=9 next_prio=120
+     ksoftirqd/0-9     [000] d... 12118.165223: sched_switch: prev_comm=ksoftirqd/0 prev_pid=9 prev_prio=120 prev_state=S ==> next_comm=vfs_proc next_pid=2621 next_prio=120
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 21 (7fedd5616082, 0, 17, 54, fffffffffffffffc, 7ffcc0ddf120)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 21 = -2
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 21 (7fedd5618dd0, 4, 7fedd55f5190, 8, 7fedd581ec52, 1)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 21 = -2
+        #  NR 257은 openat라는 syscall 이고 이는 open과 비슷하지만 상대 경로를 이용 가능할 경우  https://pinocc.tistory.com/entry/linux-openat-open-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90 
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 257 (ffffff9c, 7fedd5616428, 80000, 0, 0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 257 = 3
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 5 (3, 7ffcc0c4dde0, 7ffcc0c4dde0, 0, 0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 5 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 9 (0, d29f, 1, 2, 3, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 9 = 140659465969664
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 3 (3, d29f, 1, 2, 3, 0)
+        vfs_proc-2621  [000] .... 12118.165223: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 3 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 21 (7fedd5616082, 0, 0, 7fedd5613390, 1, 1)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 21 = -2
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 257 (ffffff9c, 7fedd581edd0, 80000, 0, 0, 7ffcc0c4df8f)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 257 = 3
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 0 (3, 7ffcc0c4dfa8, 340, 0, 0, 7ffcc0c4df8f)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 0 = 832
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 5 (3, 7ffcc0c4de40, 7ffcc0c4de40, 7fedd581edd0, 7fedd581edd0, 7fedd581e170)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 5 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 9 = 140659465961472
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 9 (0, 3f0ae0, 5, 802, 3, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 9 = 140659459637248
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 10 (7fedd53eb000, 200000, 0, 1, 3, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 10 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 9 (7fedd55eb000, 6000, 3, 812, 3, 1e7000)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 9 = 140659463729152
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 9 (7fedd55f1000, 3ae0, 3, 32, ffffffff, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 9 = 140659463753728
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+        vfs_proc-2621  [000] .... 12118.165223: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 3 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 158 (1002, 7fedd580d4c0, 7fedd580de10, 7fedd580c998, 90, 40)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 158 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 10 (7fedd55eb000, 4000, 1, 7fedd580c000, 7ffcc0ddf1b8, 2)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 10 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 10 (557e69ebb000, 1000, 1, 7fedd581e170, 0, 84)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 10 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 10 (7fedd581c000, 1000, 1, 7fedd581d9f0, 0, c0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 10 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 11 (7fedd580e000, d29f, 1a9000000000, 7fedd581d9f0, 0, c0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 11 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 257 (ffffff9c, 557e69cbbb54, 2, 0, 7fedd55f0d80, 7fedd55f0d80)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 257 = 3
+        ## write 시작 
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 1 (3, 7ffcc0c4e6a4, b, 0, 7ffcc0c4e6b0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_write_iter+0x0/0x3b0 <-new_sync_write+0x11b/0x1b0
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_write_iter+0x5/0x3b0
+ # 위와 동일한 흐름으로 ext_4_file_write_iter가 호출된 다 
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 1 = 11
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 8 (3, 0, 0, 0, 7ffcc0c4e6b0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_llseek+0x0/0x100 <-ksys_lseek+0x80/0xa0
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_llseek+0x5/0x100
+ => ksys_lseek+0x80/0xa0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 8 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 0 (3, 7ffcc0c4e6b0, 100, 0, 7ffcc0c4e6b0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_read_iter+0x0/0x40 <-new_sync_read+0x114/0x1a0
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_read_iter+0x5/0x40
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 0 = 34
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 5 (1, 7ffcc0c4ded0, 7ffcc0c4ded0, 0, 7fedd580d4c0, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 5 = 0
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 12 (0, 7fedd55efc40, 20270, fffffffffffff000, 2, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 12 = 94001462497280
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 12 (557e6bc9e000, 7fedd55efc40, 557e6bc7d000, fffffffffffff000, 2, 0)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 12 = 94001462632448
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 1 (1, 557e6bc7d260, 1d, ffffffde, 7ffcc0c4e6b0, 7fedd5372930)
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 1 = 29
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 1 (3, 7ffcc0c4e6a4, b, ffffffde, 0, 22)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_file_write_iter+0x0/0x3b0 <-new_sync_write+0x11b/0x1b0
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_file_write_iter+0x5/0x3b0
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.165223: sys_exit: NR 1 = 11
+        vfs_proc-2621  [000] .... 12118.165223: sys_enter: NR 74 (3, 7ffcc0c4e6a4, b, ffffffde, 0, 22)
+        vfs_proc-2621  [000] .... 12118.165223: ext4_sync_file+0x0/0x3d0 <-do_fsync+0x38/0x60
+        vfs_proc-2621  [000] .... 12118.165223: <stack trace>
+ => 0xffffffffc014d061
+ => ext4_sync_file+0x5/0x3d0
+ => do_fsync+0x38/0x60
+ => __x64_sys_fsync+0x10/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+          <idle>-0     [001] d... 12118.166486: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:1 next_pid=2527 next_prio=120
+    kworker/u8:1-2527  [001] d... 12118.166486: sched_switch: prev_comm=kworker/u8:1 prev_pid=2527 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+        vfs_proc-2621  [000] d... 12118.167493: sched_switch: prev_comm=vfs_proc prev_pid=2621 prev_prio=120 prev_state=D ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [003] d... 12118.167788: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd next_pid=980 next_prio=120
+            sshd-980   [003] .... 12118.167788: sys_exit: NR 23 = 1
+            sshd-980   [003] .... 12118.167788: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [003] .... 12118.167788: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.167788: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [003] .... 12118.167788: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.167788: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [003] .... 12118.167920: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.167920: sys_enter: NR 0 (b, 7ffee02144e0, 4000, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [003] .... 12118.167920: sys_exit: NR 0 = 30
+            sshd-980   [003] .... 12118.167920: sys_enter: NR 39 (557f11c39ecc, 8, 2c, 0, 1, 100)
+            sshd-980   [003] .... 12118.167920: sys_exit: NR 39 = 980
+            sshd-980   [003] .... 12118.167920: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [003] .... 12118.168556: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.168556: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [003] .... 12118.168556: sys_exit: NR 23 = 1
+            sshd-980   [003] .... 12118.168556: sys_enter: NR 14 (0, 7ffee0218580, 7ffee0218500, 8, 0, 1000)
+            sshd-980   [003] .... 12118.168556: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.168556: sys_enter: NR 14 (2, 7ffee0218500, 0, 8, 0, 1000)
+            sshd-980   [003] .... 12118.168556: sys_exit: NR 14 = 0
+            sshd-980   [003] .... 12118.168556: sys_enter: NR 228 (7, 7ffee02185a0, 7ffee02185a0, 8, 7ffee02e50f0, 7ffee02185a0)
+            sshd-980   [003] .... 12118.168556: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.168556: sys_enter: NR 1 (3, 557f11c57b30, 44, 8, 7ffee02e50f0, 7ffee02185a0)
+          <idle>-0     [002] d... 12118.168643: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:3 next_pid=2522 next_prio=120
+     kworker/2:3-2522  [002] d... 12118.168643: sched_switch: prev_comm=kworker/2:3 prev_pid=2522 prev_prio=120 prev_state=I ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d... 12118.168643: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+            sshd-980   [003] .... 12118.169660: sys_exit: NR 1 = 68
+            sshd-980   [003] .... 12118.169660: sys_enter: NR 228 (7, 7ffee02184f0, 7ffee02184f0, 0, 7ffee02e50f0, 7ffee02184f0)
+            sshd-980   [003] .... 12118.169660: sys_exit: NR 228 = 0
+            sshd-980   [003] .... 12118.169660: sys_enter: NR 23 (c, 557f11c3c8a0, 557f11c52f90, 0, 0, 1000)
+            sshd-980   [003] d... 12118.169660: sched_switch: prev_comm=sshd prev_pid=980 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0     [000] d... 12118.171198: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=ksoftirqd/0 next_pid=9 next_prio=120
+     ksoftirqd/0-9     [000] d... 12118.171198: sched_switch: prev_comm=ksoftirqd/0 prev_pid=9 prev_prio=120 prev_state=S ==> next_comm=vfs_proc next_pid=2621 next_prio=120
+        vfs_proc-2621  [000] d... 12118.171198: sched_switch: prev_comm=vfs_proc prev_pid=2621 prev_prio=120 prev_state=D ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.173056: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=jbd2/sda2-8 next_pid=287 next_prio=120
+     jbd2/sda2-8-287   [002] d... 12118.173056: sched_switch: prev_comm=jbd2/sda2-8 prev_pid=287 prev_prio=120 prev_state=D ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.173937: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d... 12118.173937: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.175608: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=jbd2/sda2-8 next_pid=287 next_prio=120
+     jbd2/sda2-8-287   [002] d... 12118.175608: sched_switch: prev_comm=jbd2/sda2-8 prev_pid=287 prev_prio=120 prev_state=D ==> next_comm=kworker/2:1H next_pid=175 next_prio=100
+    kworker/2:1H-175   [002] d... 12118.175608: sched_switch: prev_comm=kworker/2:1H prev_pid=175 prev_prio=100 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.178205: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d... 12118.178205: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.179312: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1H next_pid=175 next_prio=100
+    kworker/2:1H-175   [002] d... 12118.179312: sched_switch: prev_comm=kworker/2:1H prev_pid=175 prev_prio=100 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.182013: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/2:1H next_pid=175 next_prio=100
+    kworker/2:1H-175   [002] d... 12118.182013: sched_switch: prev_comm=kworker/2:1H prev_pid=175 prev_prio=100 prev_state=I ==> next_comm=ksoftirqd/2 next_pid=20 next_prio=120
+     ksoftirqd/2-20    [002] d... 12118.182013: sched_switch: prev_comm=ksoftirqd/2 prev_pid=20 prev_prio=120 prev_state=S ==> next_comm=rcu_sched next_pid=10 next_prio=120
+       rcu_sched-10    [002] d... 12118.182013: sched_switch: prev_comm=rcu_sched prev_pid=10 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [002] d... 12118.185819: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=jbd2/sda2-8 next_pid=287 next_prio=120
+     jbd2/sda2-8-287   [002] d... 12118.185819: sched_switch: prev_comm=jbd2/sda2-8 prev_pid=287 prev_prio=120 prev_state=S ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0     [000] d... 12118.187056: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=vfs_proc next_pid=2621 next_prio=120
+        vfs_proc-2621  [000] .... 12118.187056: sys_exit: NR 74 = 0
+        vfs_proc-2621  [000] .... 12118.187056: sys_enter: NR 3 (3, 7ffcc0c4e6a4, b, ffffffde, 0, 22)
+        vfs_proc-2621  [000] .... 12118.187056: __close_fd+0x0/0x80 <-__x64_sys_close+0x1e/0x50
+        vfs_proc-2621  [000] .... 12118.187056: <stack trace>
+ => 0xffffffffc014d061
+ => __close_fd+0x5/0x80
+ => __x64_sys_close+0x1e/0x50
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        vfs_proc-2621  [000] .... 12118.187056: sys_exit: NR 3 = 0
+        vfs_proc-2621  [000] .... 12118.187056: sys_enter: NR 1 (1, 557e6bc7d260, 16, 2, 0, 0)
+        vfs_proc-2621  [000] .... 12118.187056: sys_exit: NR 1 = 22\
+        # exi_group으로 vfs_proc에 속한 모든 스레드를 종료한다 
+        vfs_proc-2621  [000] .... 12118.187056: sys_enter: NR 231 (0, 3c, 0, 2, e7, ffffffffffffff80)
+        vfs_proc-2621  [000] d... 12118.187056: sched_switch: prev_comm=vfs_proc prev_pid=2621 prev_prio=120 prev_state=Z ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0     [001] d... 12118.188017: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u8:1 next_pid=2527 next_prio=120

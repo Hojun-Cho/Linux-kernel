@@ -1,0 +1,100 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 16/16   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+     file_create-1171  [002] ....   806.207424: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+     file_create-1171  [002] ....   806.207424: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+     file_create-1171  [002] ....   806.207424: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+     file_create-1171  [002] ....   806.207424: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => open_exec+0x26/0x40
+ => load_elf_binary+0x1f9/0x1523
+ => search_binary_handler+0x8a/0x1b0
+ => __do_execve_file.isra.44+0x6e9/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+     file_create-1171  [002] ....   806.207424: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+     file_create-1171  [002] ....   806.207424: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+     file_create-1171  [002] ....   806.207424: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+     file_create-1171  [002] ....   806.207424: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+     file_create-1171  [002] ....   806.209378: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+     file_create-1171  [002] ....   806.209378: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-1172  [002] ....   809.922718: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+            bash-1172  [002] ....   809.922718: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_open_execat+0x83/0x1a0
+ => __do_execve_file.isra.44+0x5d0/0x8b0
+ => __x64_sys_execve+0x34/0x40
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-1172  [002] ....   809.923484: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+            bash-1172  [002] ....   809.923484: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-1172  [002] ....   809.926444: ext4_file_open+0x0/0x1f0 <-do_dentry_open+0x1ea/0x380
+            bash-1172  [002] ....   809.926444: <stack trace>
+ => 0xffffffffc0348061
+ => ext4_file_open+0x5/0x1f0
+ => do_dentry_open+0x1ea/0x380
+ => path_openat+0x2e9/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
