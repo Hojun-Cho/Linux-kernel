@@ -13,13 +13,64 @@
      file_create-1484  [001] ....  2588.629498: <stack trace>
  => 0xffffffffc0348061
  => ext4_alloc_inode+0x5/0x170
+ ##############################################
+ static struct inode *alloc_inode(struct super_block *sb)
+ {
+     const struct super_operations *ops = sb->s_op;
+     struct inode *inode;
+ 
+     if (ops->alloc_inode)
+        #슈퍼블록에 할당된 ext4에 해당하는 alloc_inode 함수를 실행  => ext4_alloc_inode 호출  
+         inode = ops->alloc_inode(sb); 
+    
+    ...
+ 
+     return inode;
+ }
+ ##############################################
  => alloc_inode+0x1e/0xa0
  => new_inode_pseudo+0xe/0x60
  => new_inode+0x15/0x80
  => __ext4_new_inode+0x12f/0x1340
- => ext4_create+0xb0/0x1b0
+ ##############################################
+ #ext4_create 에서 inode->i_op = &ext4_file_inode_operations를 등록 
+ const struct file_operations ext4_file_operations = {
+	.llseek		= ext4_llseek,
+	.open		= ext4_file_open,
+    ...
+
+};
+ => ext4_create+0xb0/0x1b0  
+ ###############################################
+ const struct inode_operations ext4_dir_inode_operations = {
+	.create		= ext4_create, 
+    => ceate 오퍼레이션에 ext4_create가 등록 
+    => 따라서 create를 호출하면 ext4_create가 호출됨 
+
+};
+
+ ################################################
+ 파일의 오픈 플래그를 설정한다 
+ static struct file *path_openat(struct nameidata *nd,
+			const struct open_flags *op, unsigned flags)
+{
+    file->f_flags = op->open_flag;
+    ...
+
+}
+##################################################
  => path_openat+0x121f/0x1570
  => do_filp_open+0x9b/0x110
  => do_sys_open+0x1bd/0x250
  => do_syscall_64+0x48/0x120
  => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+
+
+## 아이노드 ##
+파일이 수정된 시간,접근 시간이 저장돼 있다.
+파일을 읽고,쓰고 할 수있는 권한 정보도 포함돼 있다.
+아이노드 객체는 각 파일 그 자체를 관리하고 표현하는 모든 속성과 동작 정보를 저장하고 있다.
+
+
+ 파일 생성시 파일에 대한 아이노드를 생성 
+ 아이노드는 파일에 일대일 대응
