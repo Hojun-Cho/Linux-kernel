@@ -1,0 +1,235 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 32/32   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+           <...>-587   [001] ....   948.861117: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           <...>-587   [001] ....   948.861117: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => trailing_symlink+0x22d/0x250
+ => path_lookupat+0x7b/0x210
+ => filename_lookup+0xb6/0x190
+ => vfs_statx+0x73/0xe0
+ => __do_sys_newstat+0x39/0x70
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-587   [001] ....   948.861117: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           <...>-587   [001] ....   948.861117: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => trailing_symlink+0x12f/0x250
+ => path_lookupat+0x7b/0x210
+ => filename_lookup+0xb6/0x190
+ => vfs_statx+0x73/0xe0
+ => __do_sys_newstat+0x39/0x70
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.535647: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.535647: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => trailing_symlink+0x22d/0x250
+ => path_openat+0xc6/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.535647: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.535647: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => generic_file_read_iter+0x8b4/0xa20
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.561190: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.561190: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => link_path_walk.part.45+0x3c3/0x500
+ => path_lookupat+0x95/0x210
+ => filename_lookup+0xb6/0x190
+ => unix_find_other+0x41/0x200
+ => unix_stream_connect+0xee/0x490
+ => __sys_connect+0x87/0xf0
+ => __x64_sys_connect+0x16/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.561190: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.561190: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => generic_file_read_iter+0x8b4/0xa20
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.562437: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_write_end+0x7f/0xa0
+ => ext4_da_write_end+0x133/0x280
+ => generic_perform_write+0xfc/0x1b0
+ => __generic_file_write_iter+0x102/0x1a0
+ => ext4_file_write_iter+0x158/0x3b0
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.562437: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => trailing_symlink+0x22d/0x250
+ => path_openat+0xc6/0x1570
+ => do_filp_open+0x9b/0x110
+ => do_sys_open+0x1bd/0x250
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   950.562437: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => generic_file_read_iter+0x8b4/0xa20
+ => new_sync_read+0x114/0x1a0
+ => vfs_read+0x89/0x130
+ => ksys_read+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   951.484445: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   951.484445: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_write_end+0x7f/0xa0
+ => ext4_da_write_end+0x133/0x280
+ => generic_perform_write+0xfc/0x1b0
+ => __generic_file_write_iter+0x102/0x1a0
+ => ext4_file_write_iter+0x158/0x3b0
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           snapd-778   [002] ....   953.759151: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           snapd-778   [002] ....   953.759151: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => ext4_mb_new_blocks+0xfc/0xae0
+ => ext4_ext_map_blocks+0xbff/0x1210
+ => ext4_map_blocks+0x3ac/0x5e0
+ => ext4_getblk+0x50/0x1a0
+ => ext4_bread+0x1f/0xa0
+ => ext4_append+0x48/0xd0
+ => ext4_mkdir+0x1f4/0x410
+ => vfs_mkdir+0xdb/0x190
+ => do_mkdirat+0x7b/0xf0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           snapd-778   [002] ....   953.759470: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           snapd-778   [002] ....   953.759470: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_write_end+0x7f/0xa0
+ => ext4_da_write_end+0x133/0x280
+ => generic_perform_write+0xfc/0x1b0
+ => __generic_file_write_iter+0x102/0x1a0
+ => ext4_file_write_iter+0x158/0x3b0
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           loop0-1374  [002] ....   953.858897: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           loop0-1374  [002] ....   953.858897: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => generic_file_read_iter+0x8b4/0xa20
+ => do_iter_readv_writev+0x19c/0x1c0
+ => do_iter_read+0x9e/0x180
+ => loop_queue_work+0x6f1/0xa30
+ => kthread_worker_fn+0xa3/0x1c0
+ => kthread+0x113/0x130
+ => ret_from_fork+0x35/0x40
+           snapd-778   [002] ....   953.866489: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+           snapd-778   [002] ....   953.866489: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => ext4_free_blocks+0xa32/0xab0
+ => ext4_ext_remove_space+0xa8d/0x1640
+ => ext4_truncate+0x3cf/0x3f0
+ => ext4_evict_inode+0x219/0x590
+ => evict+0xbf/0x180
+ => vfs_rmdir+0x13f/0x160
+ => do_rmdir+0x197/0x1f0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            nano-1372  [002] ....   958.652123: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            nano-1372  [002] ....   958.652123: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_write_end+0x7f/0xa0
+ => ext4_da_write_end+0x133/0x280
+ => generic_perform_write+0xfc/0x1b0
+ => __generic_file_write_iter+0x102/0x1a0
+ => ext4_file_write_iter+0x158/0x3b0
+ => new_sync_write+0x11b/0x1b0
+ => vfs_write+0xad/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-1259  [002] ....   960.829103: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
+            bash-1259  [002] ....   960.829103: <stack trace>
+ => 0xffffffffc0159061
+ => ext4_dirty_inode+0x5/0x60
+ => __mark_inode_dirty+0x14e/0x3c0
+ => generic_update_time+0x9f/0xd0
+ => touch_atime+0xb0/0xd0
+ => iterate_dir+0x182/0x1a0
+ => __x64_sys_getdents+0xab/0x130
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
