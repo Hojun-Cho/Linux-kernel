@@ -1,4 +1,10 @@
 # tracer: function
+파일에 변경,생성이 일어나면 리눅스는 아이노드의 상태를 dirty로 바꾼다.
+dirty는 디스크까지 접근 속도가 cpu나 메모리에 비해 느리기 때문에 바로 디스크에 변경 사항을 저장하지 않고 
+일정시간 대기한다. 그 후 디스크에 쓴다.
+즉 dirty는 현재 파일의 변경을 나타낸다. dirty인 inode가 있다면 그 파일은 디스크와 동기화해야 하는 상태이다.
+ jpa에도 dirty check가 존재한다(1차캐시). jpa에서는 dirty check를 통해 데이터의 무결성을 지켜준다 
+
 #
 # entries-in-buffer/entries-written: 32/32   #P:4
 #
@@ -12,10 +18,76 @@
            <...>-587   [001] ....   948.861117: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
            <...>-587   [001] ....   948.861117: <stack trace>
  => 0xffffffffc0159061
+######################## 
+journal (일기장): 파일 시스템에 데이터를 기록하기 전에 모든 데이터를 저널에 넘긴 뒤 기록하는 방식.
+가장 안전한 모드이다. 하지만 매번 같은 데이터를 두번씩 저장하는 꼴(저널 + 디스크) 이므로 성능이 떨어지게 된다.
+https://blog.daum.net/rayolla/48
+밑에서 다시 정리하자
+void ext4_dirty_inode(struct inode *inode, int flags) =>linux 4.8v 
+{
+    ...
+	handle = ext4_journal_start(inode, EXT4_HT_INODE, 2); => 저널에 기록
+	if (IS_ERR(handle))
+		goto out;
+
+	ext4_mark_inode_dirty(handle, inode);
+
+	ext4_journal_stop(handle);
+    ... 
+}
+
+########################/*
+ * ext4_dirty_inode()는 __mark_inode_dirty()에서 호출됩니다.
+ *
+ * 우리는 파일이 확장되는 경우에 정말 관심이 있습니다.
+ * i_size는 generic_commit_write()에 의해 변경되었으므로 다음이 필요합니다.
+ * 현재 트랜잭션에 업데이트된 inode를 포함합니다.
+ *
+ *
+ 만약 아이노드가 동기식으로 표시되어 있다면, 우리는 여기서 그것을 존중하지 않는다. => 동기식으로 처리하지 않는다 ?? 
+ 시간 업데이트에 대한 커밋을 일으킬 수 있습니다.  => 동기식이 아니라서 먼저 시간 업데이트 커밋이 발생??
+ 우리는 동기식 아이노드를 최대한 높은 수준으로 처리합니다. => ???????????진짜 모르겠다
+ *
+/*
+
+
  => ext4_dirty_inode+0x5/0x60
+ ########################
+ * inode가 더러워지고 있음을 파일 시스템에 알립니다.
+ * (필요한 경우) 디스크 상의 필드를 업데이트하고 저널링할 수 있습니다.
+ * 아이노드. 이것은 inode 자체가 실행 중일 때만 필요합니다.
+ * 이제 더러워졌습니다. 즉. I_DIRTY_INODE에만 필요하며 필요하지 않습니다.
+ * I_DIRTY_PAGES 또는 I_DIRTY_TIME 동안만. 
+ 정리하면 대충 inode가 dirty 상태라고 시스템에 알린다는 의미인듯...
+ /*
+
+ if (sb->s_op->dirty_inode)
+    sb->s_op->dirty_inode(inode, flags & I_DIRTY_INODE);
+
+이렇게 슈퍼블럭에 등록된 dirty_inode를 호출한다 
+
  => __mark_inode_dirty+0x14e/0x3c0
+ #########################
+ inode->i_atime = *time; 
+inode에 현재 시각을 기록 
  => generic_update_time+0x9f/0xd0
+ #########################
+ now = current_time(inode);
+ inode_update_time(inode, &now, S_ATIME);
+ 파일에 수정 시각을 기록한다.
+ 그리고 inode_update_time를 호출해서 
+
+ if (inode->i_op->update_time)
+    return inode->i_op->update_time(inode, time, flags);
+return generic_update_time(inode, time, flags);
+
+만약 업데이트된 파일이라면 update_time의 흐름 
+새로 생성된 파일이라면 generic_update_time의 흐름 
+
+나는 파일을 새로 생성해서 generic_update_time으로 흘러간다 
+
  => touch_atime+0xb0/0xd0
+ #########################
  => trailing_symlink+0x22d/0x250
  => path_lookupat+0x7b/0x210
  => filename_lookup+0xb6/0x190
@@ -23,213 +95,21 @@
  => __do_sys_newstat+0x39/0x70
  => do_syscall_64+0x48/0x120
  => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-           <...>-587   [001] ....   948.861117: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-           <...>-587   [001] ....   948.861117: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => trailing_symlink+0x12f/0x250
- => path_lookupat+0x7b/0x210
- => filename_lookup+0xb6/0x190
- => vfs_statx+0x73/0xe0
- => __do_sys_newstat+0x39/0x70
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.535647: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.535647: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => trailing_symlink+0x22d/0x250
- => path_openat+0xc6/0x1570
- => do_filp_open+0x9b/0x110
- => do_sys_open+0x1bd/0x250
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.535647: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.535647: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => generic_file_read_iter+0x8b4/0xa20
- => new_sync_read+0x114/0x1a0
- => vfs_read+0x89/0x130
- => ksys_read+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.561190: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.561190: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => link_path_walk.part.45+0x3c3/0x500
- => path_lookupat+0x95/0x210
- => filename_lookup+0xb6/0x190
- => unix_find_other+0x41/0x200
- => unix_stream_connect+0xee/0x490
- => __sys_connect+0x87/0xf0
- => __x64_sys_connect+0x16/0x20
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.561190: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.561190: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => generic_file_read_iter+0x8b4/0xa20
- => new_sync_read+0x114/0x1a0
- => vfs_read+0x89/0x130
- => ksys_read+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.562437: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_write_end+0x7f/0xa0
- => ext4_da_write_end+0x133/0x280
- => generic_perform_write+0xfc/0x1b0
- => __generic_file_write_iter+0x102/0x1a0
- => ext4_file_write_iter+0x158/0x3b0
- => new_sync_write+0x11b/0x1b0
- => vfs_write+0xad/0x1a0
- => ksys_write+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.562437: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => trailing_symlink+0x22d/0x250
- => path_openat+0xc6/0x1570
- => do_filp_open+0x9b/0x110
- => do_sys_open+0x1bd/0x250
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   950.562437: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   950.562437: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => generic_file_read_iter+0x8b4/0xa20
- => new_sync_read+0x114/0x1a0
- => vfs_read+0x89/0x130
- => ksys_read+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   951.484445: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   951.484445: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_write_end+0x7f/0xa0
- => ext4_da_write_end+0x133/0x280
- => generic_perform_write+0xfc/0x1b0
- => __generic_file_write_iter+0x102/0x1a0
- => ext4_file_write_iter+0x158/0x3b0
- => new_sync_write+0x11b/0x1b0
- => vfs_write+0xad/0x1a0
- => ksys_write+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-           snapd-778   [002] ....   953.759151: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-           snapd-778   [002] ....   953.759151: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => ext4_mb_new_blocks+0xfc/0xae0
- => ext4_ext_map_blocks+0xbff/0x1210
- => ext4_map_blocks+0x3ac/0x5e0
- => ext4_getblk+0x50/0x1a0
- => ext4_bread+0x1f/0xa0
- => ext4_append+0x48/0xd0
- => ext4_mkdir+0x1f4/0x410
- => vfs_mkdir+0xdb/0x190
- => do_mkdirat+0x7b/0xf0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-           snapd-778   [002] ....   953.759470: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-           snapd-778   [002] ....   953.759470: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_write_end+0x7f/0xa0
- => ext4_da_write_end+0x133/0x280
- => generic_perform_write+0xfc/0x1b0
- => __generic_file_write_iter+0x102/0x1a0
- => ext4_file_write_iter+0x158/0x3b0
- => new_sync_write+0x11b/0x1b0
- => vfs_write+0xad/0x1a0
- => ksys_write+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-           loop0-1374  [002] ....   953.858897: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-           loop0-1374  [002] ....   953.858897: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => generic_file_read_iter+0x8b4/0xa20
- => do_iter_readv_writev+0x19c/0x1c0
- => do_iter_read+0x9e/0x180
- => loop_queue_work+0x6f1/0xa30
- => kthread_worker_fn+0xa3/0x1c0
- => kthread+0x113/0x130
- => ret_from_fork+0x35/0x40
-           snapd-778   [002] ....   953.866489: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-           snapd-778   [002] ....   953.866489: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => ext4_free_blocks+0xa32/0xab0
- => ext4_ext_remove_space+0xa8d/0x1640
- => ext4_truncate+0x3cf/0x3f0
- => ext4_evict_inode+0x219/0x590
- => evict+0xbf/0x180
- => vfs_rmdir+0x13f/0x160
- => do_rmdir+0x197/0x1f0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            nano-1372  [002] ....   958.652123: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            nano-1372  [002] ....   958.652123: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_write_end+0x7f/0xa0
- => ext4_da_write_end+0x133/0x280
- => generic_perform_write+0xfc/0x1b0
- => __generic_file_write_iter+0x102/0x1a0
- => ext4_file_write_iter+0x158/0x3b0
- => new_sync_write+0x11b/0x1b0
- => vfs_write+0xad/0x1a0
- => ksys_write+0xa1/0xe0
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
-            bash-1259  [002] ....   960.829103: ext4_dirty_inode+0x0/0x60 <-__mark_inode_dirty+0x14e/0x3c0
-            bash-1259  [002] ....   960.829103: <stack trace>
- => 0xffffffffc0159061
- => ext4_dirty_inode+0x5/0x60
- => __mark_inode_dirty+0x14e/0x3c0
- => generic_update_time+0x9f/0xd0
- => touch_atime+0xb0/0xd0
- => iterate_dir+0x182/0x1a0
- => __x64_sys_getdents+0xab/0x130
- => do_syscall_64+0x48/0x120
- => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+
+
+
+ journaling을 통해서 파일을 찾을 때 디스크에 직접 가지 말고 저널링된 정보를 바탕을 찾는다
+ 즉 저널을 캐쉬처럼 이용이 가능하다 
+ 캐쉬처럼 이용하는 방법에는 2가지 방법이 존재한다
+ 1. Write Through (실시간으로 저널에 기록)
+    실기낭 용략 기록을 남기닊나 복구 측면에서 good 하지만 실시간이라서 좀 느리다.
+ 2. Write Back (실재 일을 다 마치고 나서 저널에 기록)
+    실제 저장장치에 저장되다가 저장 장치가 훼손 되면 문제가 발생.
+    일을 다 마치고 기록하니 언제 문제가 생겼는지 알기 힘듬
+
+    그럼 Write Back은 왜 사용??
+        Write Through가 캐시 역활을 하면서 오히려 병목 현상이 발생 
+        하지만 Write Back은 이런 기록 과정을 최소화 하는 기법.
+
+        실서버에서 사용하는 저장장치에서 사용하기에는 너무나 위험한 Write Back 
+        => 복구가 어려움 
