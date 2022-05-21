@@ -1,0 +1,65 @@
+# 1ST############################################################################################3#
+# entries-in-buffer/entries-written: 36/36   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+        # 내가 실행한 bash의 pid가 2260 이다
+        # kill -STOP 으로 프로세스를 stop시켰고 이 시그널이 wait을 호출
+            bash-2260  [000] ....  4237.642664: __x64_sys_wait4+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2260  [000] ....  4237.642664: <stack trace>
+ => 0xffffffffc0221061
+###############################
+# 61    common  wait4                   __x64_sys_wait4
+# wait4는 뭘까??
+#  wait4 - wait for process to change state, 즉 내가 정지시킨 프로세스가 다시 실행되기를 기다리는 상태를 말하는듯??
+ => __x64_sys_wait4+0x5/0x20
+################################
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+
+
+
+
+# 2ST############################################################################################3
+
+#
+# entries-in-buffer/entries-written: 44/44   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+            bash-2260  [003] ....  5280.184601: __x64_sys_wait4+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2260  [003] ....  5280.184601: <stack trace>
+ => 0xffffffffc0221061
+ => __x64_sys_wait4+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+#################################
+kill -CONT 라는 시그널을 받고 태스크를 깨우는 시그널을 보낸다 
+              su-2445  [000] d...  5287.282357: signal_wake_up_state+0x0/0x30 <-__send_signal+0x289/0x3e0
+              su-2445  [000] d...  5287.282357: <stack trace>
+#################################
+ => 0xffffffffc0221061
+#################################
+send_signal에서 보낸 시그널로 내가 정지시킨 프로세스를 꺠운다.
+자세한 코드는 보는게 너무 어려워서 감을 못잡겠다...! 
+
+ => signal_wake_up_state+0x5/0x30
+##################################
+
+ => __send_signal+0x289/0x3e0
+ => do_notify_parent+0x229/0x270
+ => do_exit+0xa6b/0xbd0
+ => do_group_exit+0x3a/0x90
+ => __x64_sys_exit_group+0x14/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
