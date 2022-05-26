@@ -1,0 +1,1284 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 402/402   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+        trace.sh-2700  [002] ....  8688.406523: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+        trace.sh-2700  [002] ....  8688.406523: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-2700  [002] ....  8688.406523: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+        trace.sh-2700  [002] ....  8688.406523: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-2700  [002] ....  8688.406523: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+        trace.sh-2700  [002] ....  8688.406523: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.409232: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.409232: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.409232: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8688.409232: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8688.409232: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8688.409232: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8688.409232: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.412685: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8688.412685: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.412685: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8688.412685: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8688.412685: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8688.412685: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.456319: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.456319: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.456319: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.456319: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.456319: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.456319: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.456666: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.456666: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.456666: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.456666: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.456666: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8689.456666: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.458196: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.458196: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.458196: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.458196: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.458196: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.458196: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.646487: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.646487: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.646487: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.646487: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.646487: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.646487: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.648626: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.648626: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.648626: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.648626: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.648626: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8689.648626: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.651220: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.651220: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.651220: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.651220: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.651220: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.651220: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.885256: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.885256: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.885256: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.885256: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.885256: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.885256: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.888519: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.888519: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.888519: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8689.888519: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8689.888519: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8689.888519: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.889641: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.889641: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.889641: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8689.889641: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8689.889641: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8689.889641: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.056194: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.056194: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.056194: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.056194: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.056194: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.056194: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.058196: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.058196: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.058196: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.058196: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.058196: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8690.058196: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.058656: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.058656: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.058656: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.058656: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.058656: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.058656: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.179549: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.179549: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.179549: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.179549: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.179549: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.179549: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.181511: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.181511: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.181511: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.181511: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.181511: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8690.181511: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.182520: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.182520: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.182520: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.182520: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.182520: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.182520: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.416074: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.416074: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.416074: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.416074: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.416074: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.416074: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.420149: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.420149: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.420149: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.420149: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.420149: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8690.420149: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.421115: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.421115: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.421115: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.421115: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.421115: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.421115: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.611362: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.611362: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.611362: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.611362: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.611362: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.611362: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.613425: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.613425: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.613425: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8690.613425: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8690.613425: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8690.613425: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.616357: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.616357: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.616357: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8690.616357: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8690.616357: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8690.616357: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.096196: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.096196: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.096196: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.096196: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.096196: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.096196: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.100342: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.100342: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.100342: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.100342: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.100342: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.100342: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.102693: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.102693: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.102693: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.102693: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.102693: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.102693: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.240689: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.240689: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.240689: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.240689: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.240689: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.240689: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.242999: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.242999: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.242999: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.242999: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.242999: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.242999: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.243510: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.243510: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.243510: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.243510: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.243510: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.243510: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.432335: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.432335: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.432335: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.432335: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.432335: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.432335: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.434320: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.434320: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.434320: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.434320: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.434320: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.434320: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.435461: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.435461: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.435461: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.435461: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.435461: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.435461: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.568664: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.568664: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.568664: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.568664: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.568664: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.568664: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.570380: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.570380: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.570380: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.570380: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.570380: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.570380: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.574071: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.574071: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.574071: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.574071: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.574071: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.574071: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.930036: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.930036: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.930036: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.930036: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.930036: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.930036: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.932081: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.932081: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.932081: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.932081: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.932081: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.932081: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.933180: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.933180: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.933180: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.933180: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.933180: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.933180: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [002] ....  8692.934362: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+      write_file-2707  [002] ....  8692.934362: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [001] ....  8692.950998: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+      write_file-2707  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [001] ....  8692.950998: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+      write_file-2707  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+      write_file-2707  [001] ....  8692.950998: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+      write_file-2707  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.950998: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.950998: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8692.950998: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8692.950998: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.952673: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.952673: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.952673: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8692.952673: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8692.952673: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8692.952673: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.781474: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.781474: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.781474: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.781474: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.781474: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8693.781474: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.783276: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8693.783276: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.783276: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8693.783276: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.783276: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8693.783276: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.783343: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.783343: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.783343: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.783343: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.783343: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8693.783343: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.995744: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.995744: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.995744: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.995744: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.995744: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8693.995744: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.997320: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8693.997320: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.997320: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8693.997320: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8693.997320: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8693.997320: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.997565: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.997565: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.997565: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8693.997565: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8693.997565: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8693.997565: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.363430: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.363430: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.363430: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.363430: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.363430: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.363430: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.365232: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.365232: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.365232: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.365232: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.365232: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8694.365232: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.367520: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.367520: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.367520: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.367520: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.367520: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.367520: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.419262: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.419262: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.419262: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.419262: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.419262: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.419262: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.422267: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.422267: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.422267: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.422267: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.422267: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8694.422267: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.423230: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.423230: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.423230: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.423230: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.423230: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.423230: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.537104: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.537104: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.537104: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.537104: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.537104: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.537104: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.540357: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.540357: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.540357: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.540357: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.540357: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8694.540357: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.540842: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.540842: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.540842: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.540842: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.540842: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.540842: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.660306: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.660306: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.660306: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.660306: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.660306: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.660306: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.663500: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.663500: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.663500: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8694.663500: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8694.663500: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8694.663500: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.665178: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.665178: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.665178: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8694.665178: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8694.665178: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8694.665178: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.220736: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8695.220736: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.220736: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8695.220736: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.220736: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8695.220736: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8695.221842: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8695.221842: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8695.221842: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  8695.221842: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  8695.221842: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  8695.221842: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.225554: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8695.225554: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.225554: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  8695.225554: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  8695.225554: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  8695.225554: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2708  [002] ....  8695.226496: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+           <...>-2708  [002] ....  8695.226496: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2708  [002] ....  8695.226496: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+           <...>-2708  [002] ....  8695.226496: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2708  [002] ....  8695.226496: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+           <...>-2708  [002] ....  8695.226496: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9

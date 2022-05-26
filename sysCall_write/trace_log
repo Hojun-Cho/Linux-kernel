@@ -1,0 +1,809 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 3556/3556   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 1 = 2
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 33 (a, 1, 7, a, a, 10)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 33 = 1
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 72 (a, 1, 0, a, a, 10)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 72 = 1
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 3 (a, a, a, a, 0, 10)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 3 = 0
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 1 (1, 55d833239f30, e, a, a, d)
+        trace.sh-2881  [002] ....  9948.282380: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+        trace.sh-2881  [002] ....  9948.282380: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-2881  [002] ....  9948.282380: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+        trace.sh-2881  [002] ....  9948.282380: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-2881  [002] ....  9948.282380: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+        trace.sh-2881  [002] ....  9948.282380: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 1 = 14
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 0 (ff, 55d8332388c0, 393, 1, 55d83323b330, 0)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 0 = 0
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 14 (0, 7fff1f9b7ff0, 7fff1f9b8070, 8, 7f2472b6a8b0, 7f24731b2740)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 14 = 0
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 14 (2, 7fff1f9b8070, 0, 8, 7f2472b6a8b0, 7f24731b2740)
+        trace.sh-2881  [002] ....  9948.282380: sys_exit: NR 14 = 0
+        trace.sh-2881  [002] ....  9948.282380: sys_enter: NR 231 (0, 3c, 0, 4, e7, ffffffffffffff80)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 61 = 2881
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 14 (0, 7ffcd59ff850, 7ffcd59ff8d0, 8, 55ac6abac270, 55ac6abe40a0)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 16 (ff, 5410, 7ffcd59ff83c, 8, 55ac6abac270, 55ac6abe40a0)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 14 (2, 7ffcd59ff8d0, 0, 8, 55ac6abac270, 55ac6abe40a0)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 16 (ff, 5401, 7ffcd59ff930, 8, 55ac690dcf20, 55ac6abe40a0)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 16 (ff, 5413, 7ffcd59ff940, 8, 55ac690dcf20, 55ac6abe40a0)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 14 (2, 7ffcd59ffa10, 0, 8, 55ac6abac270, 7)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 61 (ffffffff, 7ffcd59ff490, b, 0, 55ac6abac270, 7)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 61 = -10
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 15 (ffffffff, 7ffcd59ff490, ffffffffffffff80, 0, 55ac6abac270, 7)
+            bash-2613  [001] ....  9948.284197: sys_exit: NR -1 = 0
+            bash-2613  [001] ....  9948.284197: sys_enter: NR 1 (2, 55ac6abe06d0, 6c, 0, 7fc176b668b0, 7fc1771ae740)
+            bash-2613  [001] ....  9948.284197: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9948.284197: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9948.284197: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9948.284197: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9948.284197: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  9948.284197: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9948.284197: sys_exit: NR 1 = 108
+ write_file_fail-2898  [002] ....  9953.889969: sys_enter: NR 13 (3, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+ write_file_fail-2898  [002] ....  9953.889969: sys_exit: NR 13 = 0
+ write_file_fail-2898  [002] ....  9953.889969: sys_enter: NR 13 (f, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+ write_file_fail-2898  [002] ....  9953.889969: sys_exit: NR 13 = 0
+ write_file_fail-2898  [002] ....  9953.889969: sys_enter: NR 13 (11, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+ write_file_fail-2898  [002] ....  9953.889969: sys_exit: NR 13 = 0
+ write_file_fail-2898  [002] ....  9953.889969: sys_enter: NR 59 (55ac6abe4600, 55ac6abe4af0, 55ac6abb0c40, 55ac6ab9d010, 0, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 59 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 12 (0, 4f, 4d, 0, 16, 7f1090a060e5)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 12 = 94602183634944
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 21 (7f1090a05b02, 0, 17, 54, fffffffffffffffc, 7fffbf31d120)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 21 = -2
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 21 (7f1090a08880, 4, 7f10909e3190, 8, 7f1090c0ec52, 1)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 21 = -2
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 257 (ffffff9c, 7f1090a05ea8, 80000, 0, 0, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 257 = 3
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 5 (3, 7fffbf20ea50, 7fffbf20ea50, 0, 0, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 5 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 9 (0, d687, 1, 2, 3, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 9 = 139709124698112
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 3 (3, d687, 1, 2, 3, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 3 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 21 (7f1090a05b02, 0, 0, 7f1090a01570, 1, 1)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 21 = -2
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 257 (ffffff9c, 7f1090c0edd0, 80000, 0, 0, 7fffbf20ebff)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 257 = 3
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 0 (3, 7fffbf20ec18, 340, 0, 0, 7fffbf20ebff)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 0 = 832
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 5 (3, 7fffbf20eab0, 7fffbf20eab0, 7f1090c0edd0, 7f1090c0edd0, 7f1090c0e170)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 5 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 9 (0, 2000, 3, 22, ffffffff, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 9 = 139709124689920
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 9 (0, 3f0ae0, 5, 802, 3, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 9 = 139709118357504
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 10 (7f10907d9000, 200000, 0, 7fffbf20e840, 3, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 10 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 9 (7f10909d9000, 6000, 3, 812, 3, 1e7000)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 9 = 139709122449408
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 9 (7f10909df000, 3ae0, 3, 32, ffffffff, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 9 = 139709122473984
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 3 (3, 28, 0, 31, 6fffffff, 70000021)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 3 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 158 (1002, 7f1090bfd4c0, 7f1090bfde10, 7f1090bfc998, 90, 40)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 158 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 10 (7f10909d9000, 4000, 1, 7f1090bfc000, 7fffbf31d1b8, 2)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 10 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 10 (560a48dcf000, 1000, 1, 7f1090c0e170, 0, 84)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 10 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 10 (7f1090c0c000, 1000, 1, 7f1090c0d9f0, 0, c1)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 10 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 11 (7f1090bfe000, d687, 14e900000000, 7f1090c0d9f0, 0, c1)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 11 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 257 (ffffff9c, 560a48bcfb44, 2, 0, 7f10909ded80, 7f10909ded80)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 257 = 3
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 1 (3, 7fffbf20f324, 1, 0, 7fffbf20f330, 0)
+ write_file_fail-2898  [002] ....  9953.890191: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+ write_file_fail-2898  [002] ....  9953.890191: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890191: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+ write_file_fail-2898  [002] ....  9953.890191: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890191: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+ write_file_fail-2898  [002] ....  9953.890191: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 1 = 1
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 8 (3, 0, 0, 0, 7fffbf20f330, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 8 = 0
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 0 (3, 7fffbf20f330, 100, 0, 7fffbf20f330, 0)
+ write_file_fail-2898  [002] ....  9953.890191: sys_exit: NR 0 = 55
+ write_file_fail-2898  [002] ....  9953.890191: sys_enter: NR 5 (1, 7fffbf20eb50, 7fffbf20eb50, 0, 7f1090bfd4c0, 0)
+ write_file_fail-2898  [002] ....  9953.890192: sys_exit: NR 5 = 0
+ write_file_fail-2898  [002] ....  9953.890192: sys_enter: NR 12 (0, 7f10909ddc40, 20270, fffffffffffff000, 2, 0)
+ write_file_fail-2898  [002] ....  9953.890192: sys_exit: NR 12 = 94602183634944
+ write_file_fail-2898  [002] ....  9953.890192: sys_enter: NR 12 (560a498f0000, 7f10909ddc40, 560a498cf000, fffffffffffff000, 2, 0)
+ write_file_fail-2898  [002] ....  9953.890192: sys_exit: NR 12 = 94602183770112
+ write_file_fail-2898  [002] ....  9953.890192: sys_enter: NR 1 (3, 7fffbf20f324, b, 756a6f68206f6c6c, 7fffbf20f330, 37)
+ write_file_fail-2898  [002] ....  9953.890192: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+ write_file_fail-2898  [002] ....  9953.890192: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890192: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+ write_file_fail-2898  [002] ....  9953.890192: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890192: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+ write_file_fail-2898  [002] ....  9953.890192: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+ write_file_fail-2898  [002] ....  9953.890192: sys_exit: NR 1 = 11
+ write_file_fail-2898  [002] ....  9953.890192: sys_enter: NR 74 (3, 7fffbf20f324, b, 756a6f68206f6c6c, 7fffbf20f330, 37)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          mysqld-724   [003] ....  9962.407284: sys_exit: NR 208 = 0
+          mysqld-724   [003] ....  9962.407284: sys_enter: NR 208 (7ff4cc06f000, 1, 100, 36fda30, 7ff4b710a930, 1d70bc0)
+            sshd-2544  [000] ....  9962.416779: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.416779: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.416779: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.416779: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.416779: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.416779: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.416779: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.416779: sys_enter: NR 0 (3, 7ffd10775c80, 4000, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] .N..  9962.419259: sys_exit: NR 0 = 36
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 1 (9, 56349d86f340, 1, 8, 0, 0)
+            sshd-2544  [000] ....  9962.419259: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.419259: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.419259: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.419259: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.419259: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  9962.419259: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 1 = 1
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 16 (9, 5401, 7ffd10779b50, 8, 7ffd10779bb0, 0)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 16 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.419259: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.419259: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 270 = 1
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 0 (0, 7ffcd59fea3f, 1, 0, 0, 7ffcd59fe9f0)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 0 = 1
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe2240, 7ffcd59fe750, 7ffcd59fe750, 55ac6abe2241, fe00, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe2240, 7ffcd59fe750, 7ffcd59fe750, 55ac6abe2241, fe00, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe2240, 7ffcd59fe750, 7ffcd59fe750, 55ac6abe2241, fe00, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe2240, 7ffcd59fe750, 7ffcd59fe750, 55ac6abe2241, fe00, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 257 (ffffff9c, 55ac6abe2240, 90800, 0, 7fc176b64c40, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 257 = 3
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 5 (3, 7ffcd59fe7e0, 7ffcd59fe7e0, 0, 7fc176b64c40, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 5 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 78 (3, 55ac6abe8c00, 8000, 55ac6ab9d010, 7fc176b64cc0, 0)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 78 = 392
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abab250, 7ffcd59fe800, 7ffcd59fe800, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abab250, 7ffcd59fe800, 7ffcd59fe800, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abab250, 7ffcd59fe800, 7ffcd59fe800, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abab250, 7ffcd59fe800, 7ffcd59fe800, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abab250, 7ffcd59fe800, 7ffcd59fe800, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe4440, 7ffcd59fe890, 7ffcd59fe890, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 107 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 107 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 108 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 108 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 102 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 102 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 104 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 104 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 21 (55ac6abe4440, 1, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 21 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 107 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 107 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 108 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 108 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 102 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 102 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 104 (55ac6abe4440, 7ffcd59fe7b0, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 104 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 21 (55ac6abe4440, 4, 7ffcd59fe7b0, 55ac6abab251, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 21 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 78 (3, 55ac6abe8c00, 8000, 55ac6abab251, 0, 0)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 78 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 3 (3, 0, f400, 55ac6abab251, 0, 0)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 3 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe40a0, 7ffcd59fe8d0, 7ffcd59fe8d0, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe40a0, 7ffcd59fe8d0, 7ffcd59fe8d0, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe40a0, 7ffcd59fe8d0, 7ffcd59fe8d0, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe40a0, 7ffcd59fe8d0, 7ffcd59fe8d0, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 4 (55ac6abe40a0, 7ffcd59fe8d0, 7ffcd59fe8d0, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 4 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 6 (55ac6abe4440, 7ffcd59fea30, 7ffcd59fea30, 55ac6abe40a1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 6 = 0
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 1 (2, 55ac6abe06d0, 8, 0, 7fc176b668b0, 7fc1771ae740)
+            bash-2613  [001] ....  9962.421254: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9962.421254: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.421254: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9962.421254: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.421254: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  9962.421254: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.421254: sys_exit: NR 1 = 8
+            bash-2613  [001] ....  9962.421254: sys_enter: NR 270 (1, 7ffcd59feac0, 0, 0, 0, 7ffcd59fe9f0)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 0 (b, 7ffd10775b50, 4000, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 0 = 8
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 39 (56349d86e366, 6, 16, 0, 1, 100)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 39 = 2544
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.422159: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] .N..  9962.422159: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.422159: sys_enter: NR 1 (3, 56349d88a970, 2c, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.422159: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.422159: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.422159: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.422159: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.422159: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  9962.422159: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.426591: sys_exit: NR 1 = 44
+            sshd-2544  [000] ....  9962.426591: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.426753: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.426753: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 0 (3, 7ffd10775c80, 4000, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 0 = 36
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 1 (9, 56349d86f340, 1, 8, 0, 0)
+            sshd-2544  [000] ....  9962.719739: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.719739: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.719739: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.719739: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.719739: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  9962.719739: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 1 = 1
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+            sshd-2544  [000] ....  9962.719739: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.719739: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 270 = 1
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 0 (0, 7ffcd59fea3f, 1, 0, 0, 7ffcd59fe9f0)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 0 = 1
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 1 (2, 55ac6abe06d0, 1, a, a, 7ffcd59fe9f0)
+            bash-2613  [001] ....  9962.720944: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9962.720944: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.720944: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            bash-2613  [001] ....  9962.720944: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.720944: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            bash-2613  [001] ....  9962.720944: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 1 = 1
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 16 (0, 5401, 7ffcd59feb30, 1, 7fc176b668b0, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 16 (0, 5403, 7ffcd59feb00, 10, 0, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 16 (0, 5401, 7ffcd59feb00, 10, ffffffffffffff80, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (2, 7ffcd59fe8f0, 7ffcd59fe990, 8, 7ffcd59fea40, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (f, 7ffcd59fe8f0, 7ffcd59fe990, 8, 7ffcd59fea40, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (1, 7ffcd59fe8f0, 7ffcd59fe990, 8, 7ffcd59fea40, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (e, 7ffcd59fe8f0, 7ffcd59fe990, 8, 7ffcd59fea40, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (1c, 7ffcd59fe9b0, 7ffcd59fea50, 8, 7ffcd59feb00, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 13 (2, 7ffcd59fe910, 7ffcd59fe9b0, 8, 7ffcd59feb00, 55ac690ddf60)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 13 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 14 (0, 7ffcd59ff8f0, 7ffcd59ff970, 8, 0, 0)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 22 (55ac690d2738, 7ffcd59ff8f0, 7ffcd59ff970, 8, 0, 0)
+            bash-2613  [001] ....  9962.720944: sys_exit: NR 22 = 0
+            bash-2613  [001] ....  9962.720944: sys_enter: NR 56 (1200011, 0, 0, 7fc1771aea10, 7fc1771ae740, 0)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 56 = 2899
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 109 (b53, b53, 0, 7fc1771aea10, 7fc1771ae740, 0)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 109 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (2, 7ffcd59ff970, 0, 8, 8, 55ac6abac270)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (0, 7ffcd59ff890, 7ffcd59ff910, 8, 0, 1)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 3 (3, 7ffcd59ff890, 7ffcd59ff910, 8, 0, 1)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 3 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 3 (4, 7ffcd59ff890, 7ffcd59ff910, 8, 0, 1)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 3 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 16 (ff, 540f, 7ffcd59ff854, 1, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (0, 7ffcd59ff740, 7ffcd59ff7c0, 8, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 16 (ff, 5410, 7ffcd59ff72c, 8, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 16 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (2, 7ffcd59ff7c0, 0, 8, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (2, 7ffcd59ff910, 0, 8, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 14 (0, 7ffcd59ff990, 7ffcd59ffa10, 8, 0, 2f78756e696c6c61)
+            bash-2613  [001] ....  9962.721397: sys_exit: NR 14 = 0
+            bash-2613  [001] ....  9962.721397: sys_enter: NR 61 (ffffffff, 7ffcd59ff930, a, 0, 55ac6abac270, 8)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 56 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 39 (1200011, 0, 0, 7fc1771aea10, 7fc1771ae740, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 39 = 2899
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 14 (2, 55ac690e3b00, 0, 8, 7fc1771ae740, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (14, 7ffcd59ff610, 7ffcd59ff6b0, 8, 7ffcd59ff800, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (15, 7ffcd59ff610, 7ffcd59ff6b0, 8, 7ffcd59ff800, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (16, 7ffcd59ff620, 7ffcd59ff6c0, 8, 7ffcd59ff810, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 109 (b53, b53, 7fc1767b7f10, 8, 7ffcd59ff810, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 109 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 14 (0, 7ffcd59ff7a0, 7ffcd59ff820, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 16 (ff, 5410, 7ffcd59ff78c, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 16 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 14 (2, 7ffcd59ff820, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 3 (4, 7ffcd59ff820, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 0 (3, 7ffcd59ff8ef, 1, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 0 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 3 (3, 7ffcd59ff8ef, 1, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (1, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (4, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (5, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (6, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (8, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (7, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (b, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (1f, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (d, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (e, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (18, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (19, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (1a, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (a, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (c, 7ffcd59ff830, 0, 8, 0, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (2, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (3, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (f, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 13 (11, 7ffcd59ff730, 7ffcd59ff7d0, 8, 7ffcd59ff920, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 59 (55ac6abe4b10, 55ac6abe43f0, 55ac6abb0c40, 55ac6ab9d010, 31, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 59 = -8
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 257 (ffffff9c, 55ac6abe4b10, 0, 0, 31, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 257 = 3
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 0 (3, 7ffcd59ff970, 80, 0, 31, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 0 = 122
+           <...>-2899  [002] ....  9962.722934: sys_enter: NR 3 (3, 7ffcd59ff970, 80, 0, 31, 0)
+           <...>-2899  [002] ....  9962.722934: sys_exit: NR 3 = 0
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 22 (55ac690d2738, 0, 55ac6abac3a0, 0, 31, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 22 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 3 (3, 0, 55ac6abac3a0, 0, 31, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 3 (4, 0, 55ac6abac3a0, 0, 31, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 14 (0, 7ffcd59ff810, 7ffcd59ff890, 8, 31, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 14 (2, 7ffcd59ff890, 0, 8, 31, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 13 (11, 7ffcd59ff6b0, 7ffcd59ff750, 8, 7ffcd59ff8a0, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 13 (2, 7ffcd59ff6b0, 7ffcd59ff750, 8, 7ffcd59ff8a0, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 13 = 0
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 0 (b, 7ffd10775b50, 4000, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 0 = 2
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 39 (56349d86e360, 4, 10, 0, 1, 100)
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 39 = 2544
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 228 (7, 7ffd10779b60, 7ffd10779b60, 0, 7ffd107cb0f0, 7ffd10779b60)
+           <...>-2899  [002] ....  9962.723161: sys_enter: NR 14 (2, 55ac690df028, 0, 8, 7fc176b64c40, 0)
+           <...>-2899  [002] ....  9962.723161: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.723161: sys_enter: NR 23 (c, 56349d861df0, 56349d861db0, 0, 0, 1000)
+            sshd-2544  [000] ....  9962.723161: sys_exit: NR 23 = 1
+            sshd-2544  [000] ....  9962.723162: sys_enter: NR 14 (0, 7ffd10779bf0, 7ffd10779b70, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.723162: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.723162: sys_enter: NR 14 (2, 7ffd10779b70, 0, 8, 0, 1000)
+            sshd-2544  [000] ....  9962.723162: sys_exit: NR 14 = 0
+            sshd-2544  [000] ....  9962.723162: sys_enter: NR 228 (7, 7ffd10779c10, 7ffd10779c10, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.723162: sys_exit: NR 228 = 0
+            sshd-2544  [000] ....  9962.723162: sys_enter: NR 1 (3, 56349d88a970, 24, 8, 7ffd107cb0f0, 7ffd10779c10)
+            sshd-2544  [000] ....  9962.723162: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.723162: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.723162: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+            sshd-2544  [000] ....  9962.723162: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+            sshd-2544  [000] ....  9962.723162: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+            sshd-2544  [000] ....  9962.723162: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (11, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (11, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (2, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (2, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (3, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (3, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 14 (0, 0, 55ac690e3b00, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 13 (3, 7ffcd59ff830, 7ffcd59ff8d0, 8, 7ffcd59ffa20, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abe2480, 7ffcd59ff8e0, 7ffcd59ff8e0, 55ac6ab9d010, 0, 6165722f656d6f68)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac68e9d873, 7ffcd59ff970, 7ffcd59ff970, 55ac6ab9d010, 0, 6165722f656d6f68)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abb6790, 7ffcd59ff920, 7ffcd59ff920, 55ac6abb6791, 0, 2f78756e696c6c61)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abb6790, 7ffcd59ff920, 7ffcd59ff920, 55ac6abb6791, 0, 2f78756e696c6c61)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abb6790, 7ffcd59ff920, 7ffcd59ff920, 55ac6abb6791, 0, 2f78756e696c6c61)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abb6790, 7ffcd59ff920, 7ffcd59ff920, 55ac6abb6791, 0, 2f78756e696c6c61)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abb6730, 7ffcd59ff980, 7ffcd59ff980, 55ac6abb6791, fec0, 2f78756e696c6c61)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 39 (55ac6abad4f0, 55ac68e9e4f2, 1, 7fc1768e3bf0, 0, 1)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 39 = 2899
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 110 (55ac6abb3090, 55ac6ab9d010, 0, 55ac6ab9d010, 0, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 110 = 2613
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac68e9d873, 7ffcd59ff970, 7ffcd59ff970, 55ac6ab9d010, 0, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 0, 0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = -2
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 55ac6aba5ece, 7fc1768e7be0)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = -2
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 55ac6aba5ed8, 7fc1768e7250)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = -2
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 55ac6aba5ee1, 7fc1768e7090)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = -2
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 55ac6aba5ee7, 7fc1768e7a00)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = -2
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff860, 7ffcd59ff860, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 107 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 107 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 108 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 108 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 102 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 102 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 104 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 104 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 21 (55ac6abac6a0, 1, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 21 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 107 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 107 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 108 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 108 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 102 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 102 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 104 (55ac6abac6a0, 7ffcd59ff780, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 104 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 21 (55ac6abac6a0, 4, 7ffcd59ff780, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 21 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff890, 7ffcd59ff890, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 107 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 107 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 108 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 108 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 102 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 102 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 104 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 104 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 21 (55ac6abac6a0, 1, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 21 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 4 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 107 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 107 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 108 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 108 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 102 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 102 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 104 (55ac6abac6a0, 7ffcd59ff7b0, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 104 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 21 (55ac6abac6a0, 4, 7ffcd59ff7b0, 55ac6ab9d010, 55ac6aba5eec, 7fc1768e7800)
+           <...>-2899  [002] ....  9962.723162: sys_exit: NR 21 = 0
+           <...>-2899  [002] ....  9962.723162: sys_enter: NR 96 (7ffcd59ffa20, 0, 7ffcd59ff9f0, 55ac6ab9d010, 7ffcd5a55080, 7ffcd59ff9f0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 96 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 39 (7ffcd59ffa20, 0, 7ffcd59ff9f0, 55ac6ab9d010, 7ffcd5a55080, 7ffcd59ff9f0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 39 = 2899
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 111 (0, 1640, 55ac6aba73c0, 55ac6ab9d010, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 111 = 2899
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 16 (2, 540f, 7ffcd59ffab4, 55ac6ab9d010, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 16 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 13 (11, 7ffcd59ff820, 7ffcd59ff8c0, 8, 7ffcd59ffa10, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 13 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 14 (0, 0, 55ac690e3bc8, 8, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 14 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 257 (ffffff9c, 55ac6aba8220, 0, 0, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 257 = 3
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 4 (55ac6aba8220, 7ffcd59ffb60, 7ffcd59ffb60, 0, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 4 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 16 (3, 5401, 7ffcd59ffb70, 55ac6ab9d010, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 16 = -25
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 8 (3, 0, 1, 55ac6ab9d010, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 8 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 0 (3, 7ffcd59ffcd0, 50, 55ac6ab9d010, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 0 = 80
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 8 (3, 0, 0, 55ac6ab9d010, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 8 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 302 (0, 7, 0, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 302 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (ff, 1, 7ffcd59ffbd4, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 1
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (fe, 1, 7ffcd59ffbd4, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = -9
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 33 (3, fe, ffffffffffffff80, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 33 = 254
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 3 (3, fe, ffffffffffffff80, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (fe, 2, 1, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (fe, 3, 0, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 32768
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 5 (fe, 7ffcd59ffb20, 7ffcd59ffb20, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 5 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 8 (fe, 0, 1, 7ffcd59ffba0, 7ffcd59ffbb0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 8 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 0 (fe, 55ac6abe1ff0, 7a, 1, 0, 0)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 0 = 122
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 257 (ffffff9c, 55ac6aba8860, 241, 1b6, 20, 756265642f6c656e)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 257 = 3
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (1, 1, 0, 1b6, 20, 756265642f6c656e)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (1, 0, a, 1b6, 20, 756265642f6c656e)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 10
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (1, 1, 0, 1b6, 20, 756265642f6c656e)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 72 (a, 2, 1, 55ac6ab9d010, 55ac6aba8930, 1)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 72 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 33 (3, 1, 0, 55ac6ab9d010, 7fc176b668c0, 7fc1771ae740)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 33 = 1
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 3 (3, 1, 0, 55ac6ab9d010, 7fc176b668c0, 7fc1771ae740)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 3 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 5 (1, 7ffcd59ff1d0, 7ffcd59ff1d0, ffffffff, 55ac6aba86d0, 1)
+           <...>-2899  [002] ....  9962.723177: sys_exit: NR 5 = 0
+           <...>-2899  [002] ....  9962.723177: sys_enter: NR 1 (1, 55ac6abe5470, 2, a, a, 1)
+           <...>-2899  [002] ....  9962.723177: __x64_sys_write+0x0/0x20 <-do_syscall_64+0x48/0x120
+           <...>-2899  [002] ....  9962.723177: <stack trace>
+ => 0xffffffffc01e0061
+ => __x64_sys_write+0x5/0x20
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2899  [002] ....  9962.723177: ksys_write+0x0/0xe0 <-do_syscall_64+0x48/0x120
+           <...>-2899  [002] ....  9962.723177: <stack trace>
+ => 0xffffffffc01e0061
+ => ksys_write+0x5/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
+           <...>-2899  [002] ....  9962.723177: vfs_write+0x0/0x1a0 <-ksys_write+0xa1/0xe0
+           <...>-2899  [002] ....  9962.723177: <stack trace>
+ => 0xffffffffc01e0061
+ => vfs_write+0x5/0x1a0
+ => ksys_write+0xa1/0xe0
+ => do_syscall_64+0x48/0x120
+ => entry_SYSCALL_64_after_hwframe+0x44/0xa9
