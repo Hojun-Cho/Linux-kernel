@@ -3,5 +3,5 @@ sleep 3
 echo "tracing off"
 
 
-cp /sys/kernel/debug/tracing/trace trace_log
+cp /sys/kernel/debug/tracing/trace trace_log_last
 

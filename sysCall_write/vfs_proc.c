@@ -6,7 +6,7 @@
 #include <string.h>
 #include <fcntl.h>
 
-#define FILANAME  "./sample.txt"
+#define FILANAME  "./sample123.txt"
 
 int main()
 {
@@ -20,18 +20,18 @@ int main()
     memset(buf,0x0,sizeof(buf));
 
     fd = open(FILANAME,O_RDWR);
-    printf("%s",buf);
+    printf("%s\n",buf);
 
     write(fd,string,1);
 
     new_file_pos = lseek(fd,(off_t)0,SEEK_SET);
     
     read_buf_size = read(fd,buf,256);
-    printf("[+]read buffer : %s",buf);
+    printf("[+]read buffer : %s\n",buf);
 
     write(fd,string,strlen(string));
     if( -1 == fsync(fd)){
-        printf("fscny fail");
+        printf("fscny fail\n");
         exit(0);
     }
     close(fd);
